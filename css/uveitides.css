@@ -1,0 +1,52 @@
+.second-container{
+    padding-top: 3.25rem;
+    min-height: 600px;
+    display: flex;
+}
+
+
+.info-container{
+    border: 1px dotted blue;
+    background-color: #FADCD6;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    align-items: center;
+}
+
+.info-container > div {
+    border: 1px dotted red;
+    width: 76%;
+}
+
+.info-title{
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+
+.info-content {
+    text-align: start;
+    font-style: italic;
+    line-height: 2rem;
+    margin-bottom: 3rem; /*야매*/
+}
+
+ul { margin: 0; padding: 0; }
+
+.classificationButton{
+    text-align: center;
+    background-color: rgba(237, 63, 29, 0.63);
+    color: white;
+    padding: 0.88rem 0;
+    font-size: 1.25;
+}
+
+.classificationButton > a {
+    text-decoration: none;
+}
