@@ -6,7 +6,6 @@
 
 
 .info-container{
-    border: 1px dotted blue;
     background-color: #FADCD6;
     width: 100%;
     border-radius: 20px 20px 0px 0px;
@@ -18,7 +17,6 @@
 }
 
 .info-container > div {
-    border: 1px dotted red;
     width: 76%;
 }
 
@@ -45,8 +43,18 @@ ul { margin: 0; padding: 0; }
     color: white;
     padding: 0.88rem 0;
     font-size: 1.25;
+    border-style: none;
+    border-radius: 5px;
 }
 
-.classificationButton > a {
+.pathClassification {
     text-decoration: none;
+}
+
+.pathClassification:visited {
+    color: white;
+}
+
+.pathClassification:hover{
+    background-color: rgba(239, 106, 79, 0.63);
 }
