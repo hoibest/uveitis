@@ -4,30 +4,27 @@ body{
 }
 
 header{
-    border: 1px dotted blue;
     background-color: #e64626;
     font-size: 1.25rem;
     font-weight: bold;
     color: #E2E2E2;
-    padding: 2.2rem 1rem;
+    padding: 2.2rem 2rem;
 }
 
 .header-content{
-    border: 1px dotted blue;
+
 }
 
 .nav{
-    border: 1px dotted blue;
     background-color: #FADCD6;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.56rem 1.6rem;
+    padding: 0.56rem 2rem;
 }
 
 .nav-text-content{
     font-size: 0.75rem;
-    border: 1px dotted blue;
 }
 
 .nav-bar-content{
@@ -35,7 +32,6 @@ header{
 }
 
 .container{
-    border: 1px dotted blue;
     display: flex;
     flex-direction: column;
     padding-top: 6rem;
@@ -46,21 +42,18 @@ header{
 }
 
 .question-box{
-    border: 1px dotted blue;
     font-size: 1.25rem;
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .answer-box{
-    border: 1px dotted blue;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
 }
 
 .locationButton{
-    border: 1px dotted red;
     background-color: #FADCD6;
     text-align: center;
     margin-bottom: 1rem;
@@ -69,8 +62,11 @@ header{
     border-radius: 5px;
 }
 
+.locationButton > a {
+    text-decoration: none;
+}
+
 footer{
-    border: 1px dotted green;
     background-color: #F5F5F5;
     padding-top: 3.5rem;
     padding-bottom: 1.5rem;
