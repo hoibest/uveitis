@@ -27,7 +27,6 @@
     align-items: center;
     padding-top: 0.75rem;
     min-height: 430px;
-    border-bottom: 1px solid #e2e2e2;
 }
 
 .row2-content {
@@ -66,6 +65,7 @@ select{
     width: 100%;
     display: flex;
     justify-content: center;
+    border-top: 1px solid #e2e2e2;
 }
 
 .backNext {
