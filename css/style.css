@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    font-family: 'roboto';
+}
+
+header{
+    border: 1px dotted blue;
+    background-color: #e64626;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #E2E2E2;
+    padding: 2.2rem 1rem;
+}
+
+.header-content{
+    border: 1px dotted blue;
+}
+
+.nav{
+    border: 1px dotted blue;
+    background-color: #FADCD6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.56rem 1.6rem;
+}
+
+.nav-text-content{
+    font-size: 0.75rem;
+    border: 1px dotted blue;
+}
+
+.nav-bar-content{
+    border: 1px dotted blue;
+}
+
+.container{
+    border: 1px dotted blue;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    padding-bottom: 3rem;
+    min-height: 600px;
+}
+
+.question-box{
+    border: 1px dotted blue;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.answer-box{
+    border: 1px dotted blue;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.locationButton{
+    border: 1px dotted red;
+    background-color: #FADCD6;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+}
+
+footer{
+    border: 1px dotted green;
+    background-color: #F5F5F5;
+    padding-top: 3.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.footer-content{
+    font-size: 0.75rem;
+
+}
