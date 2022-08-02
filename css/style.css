@@ -80,12 +80,13 @@ header{
     border-radius: 5px;
 }
 
-.pathLocation {
-    text-decoration: none;
-}
 
 .pathLocation:visited {
     color: black;
+}
+
+.pathLocation {
+    text-decoration: none;
 }
 
 footer{
