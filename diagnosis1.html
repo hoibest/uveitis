@@ -32,10 +32,49 @@
                 </div>
             </div>
             <div class="row2">
+                <!----------------------------------------------------->
                 <div class="row2-content">
-                    <div class="symptom"><div>One</div></div>
+                    <div class="symptom"><div>Age</div></div>
                     <div class="input">
-                        <select id="onset-el">                    
+                        <select id="age-el" onchange="keepData(this)"> 
+                            <option value="">Select</option>                   
+                            <option value="lower16">≤16</option>
+                            <option value="bw17and50">17-50</option>
+                            <option value="bw51and59">51-59</option>
+                            <option value="higher60">≥60</option>
+                            <option value="idk">Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom"><div>First diagnosis</div></div>
+                    <div class="input">
+                        <select id="firstDiagnosis-el" onchange="keepData(this)"> 
+                            <option value="">Select</option>                   
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="idk">Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom"><div>Asymptomatic/minimally symptomatic</div></div>
+                    <div class="input">
+                        <select id="symptomatic-el" onchange="keepData(this)"> 
+                            <option value="">Select</option>                   
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="idk">Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom">Onset</div>
+                    <div class="input">
+                        <select id="onset-el" onchange="keepData(this)">
                             <option value="">Select</option>
                             <option value="sudden">Sudden</option>
                             <option value="insidious">Insidious</option>
@@ -43,10 +82,11 @@
                         </select>
                     </div>
                 </div>
+                <!----------------------------------------------------->
                 <div class="row2-content">
-                    <div class="symptom">Onset</div>
+                    <div class="symptom"><div>Course</div></div>
                     <div class="input">
-                        <select id="course-el">
+                        <select id="course-el" onchange="keepData(this)">                    
                             <option value="">Select</option>
                             <option value="acuteMonophasic">Acute, monophasic</option>
                             <option value="acuteRecurrent">Acute, recurrent</option>
@@ -55,10 +95,11 @@
                         </select>
                     </div>
                 </div>
+                <!----------------------------------------------------->
                 <div class="row2-content">
-                    <div class="symptom">Onset</div>
+                    <div class="symptom">Laterality</div>
                     <div class="input">
-                        <select id="laterality-el">
+                        <select id="laterality-el" onchange="keepData(this)">
                             <option value="">Select</option>
                             <option value="monoUnilateral">Unilateral</option>
                             <option value="unilateralAlternating">Unilateral, alternating</option>
@@ -67,54 +108,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row2-content">
-                    <div class="symptom"><div>Onset</div></div>
-                    <div class="input">
-                        <select id="onset-el">                    
-                            <option value="">Select</option>
-                            <option value="sudden">Sudden</option>
-                            <option value="insidious">Insidious</option>
-                            <option value="idk">Don't know</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row2-content">
-                    <div class="symptom">Onset</div>
-                    <div class="input">
-                        <select id="course-el">
-                            <option value="">Select</option>
-                            <option value="acuteMonophasic">Acute, monophasic</option>
-                            <option value="acuteRecurrent">Acute, recurrent</option>
-                            <option value="chronic">Chronic</option>
-                            <option value="idk">Don't know</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row2-content">
-                    <div class="symptom">Onset</div>
-                    <div class="input">
-                        <select id="laterality-el">
-                            <option value="">Select</option>
-                            <option value="monoUnilateral">Unilateral</option>
-                            <option value="unilateralAlternating">Unilateral, alternating</option>
-                            <option value="bilateral">Bilateral</option>
-                            <option value="idk">Don't know</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row2-content">
-                    <div class="symptom">Onset</div>
-                    <div class="input">
-                        <select id="laterality-el">
-                            <option value="">Select</option>
-                            <option value="monoUnilateral">Unilateral</option>
-                            <option value="unilateralAlternating">Unilateral, alternating</option>
-                            <option value="bilateral">Bilateral</option>
-                            <option value="idk">Don't know</option>
-                        </select>
-                    </div>
-                </div>
-                
+                <!----------------------------------------------------->
             </div>
             <div class="row3">
                 <div class="backNext">
@@ -132,5 +126,11 @@
                 Developing Uveitis Classification Application
             </div>
         </footer>
+        <script src="./js/loading.js"></script>
+        <script src="./js/patient.js"></script>
+        <script>
+            let idList = ['age-el','firstDiagnosis-el','symptomatic-el','onset-el','course-el','laterality-el']
+            loadData(idList);
+        </script>
     </body>
 </html>

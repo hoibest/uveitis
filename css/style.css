@@ -66,28 +66,27 @@ header{
 }
 
 .answer-box{
-    font-size: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.answer-box > div {
+    width: 100%;
 }
 
 .locationButton{
+    border: none;
+    font-size: 1rem;
     background-color: #FADCD6;
     text-align: center;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 1rem 0;
+    width: 100%;
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
     border-radius: 5px;
 }
 
-
-.pathLocation:visited {
-    color: black;
-}
-
-.pathLocation {
-    text-decoration: none;
-}
 
 footer{
     background-color: #F5F5F5;
