@@ -75,6 +75,10 @@ header{
     width: 100%;
 }
 
+.answer-box > div > a:visited {
+    color: black;
+}
+
 .locationButton{
     border: none;
     font-size: 1rem;
