@@ -26,6 +26,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
     min-height: 430px;
 }
 
@@ -49,6 +50,7 @@
 
 .input{
     width: 40%;
+    max-width: 300px;
 }
 
 select{
@@ -85,6 +87,10 @@ select{
     padding: 0.5rem 0.5rem;
 }
 
+.backButton:hover{
+    color: #FADCD6;
+}
+
 .nextButton {
     background-color: #59A77D;
     border: none;
@@ -93,6 +99,10 @@ select{
     font-weight: bold;
     color: white;
     padding: 0.5rem 1.25rem;
+}
+
+.nextButton:hover{
+    background-color: #7ea892;
 }
 
 

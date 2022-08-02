@@ -15,11 +15,13 @@
             </div>
         </header>
         <div class="nav">
-            <div class="nav-text-content">
-                1/7 History
-            </div>
-            <div class="nav-bar-content">
-                <div class="nav-greenbar"></div>
+            <div class="nav-content-wrapper">
+                <div class="nav-text-content">
+                    1/7 History
+                </div>
+                <div class="nav-bar-content">
+                    <div class="nav-greenbar"></div>
+                </div>
             </div>
         </div>
         <div class="diagnosis-container">
@@ -100,12 +102,24 @@
                         </select>
                     </div>
                 </div>
+                <div class="row2-content">
+                    <div class="symptom">Onset</div>
+                    <div class="input">
+                        <select id="laterality-el">
+                            <option value="">Select</option>
+                            <option value="monoUnilateral">Unilateral</option>
+                            <option value="unilateralAlternating">Unilateral, alternating</option>
+                            <option value="bilateral">Bilateral</option>
+                            <option value="idk">Don't know</option>
+                        </select>
+                    </div>
+                </div>
                 
             </div>
             <div class="row3">
                 <div class="backNext">
                     <div>
-                        <button class="backButton">Back</button>
+                        <a href="anteriorUveitides.html"><button class="backButton" onclick="">Back</button></a>
                     </div>
                     <div class="nextDiv">
                         <button class="nextButton">Next</button>
