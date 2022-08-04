@@ -1,12 +1,12 @@
-const IDK = '';
+const DK = 'idk';
 
 const historyObj = {
-    age : IDK,
-    firstDiagnosis : IDK,
-    symptomatic : IDK,
-    onset : IDK,
-    course: IDK,
-    laterality: IDK,
+    age : DK,
+    firstDiagnosis : DK,
+    symptomatic : DK,
+    onset : DK,
+    course: DK,
+    laterality: DK,
     update: function(){
         this.age = getSavedData('age-el');
         this.firstDiagnosis = getSavedData('firstDiagnosis-el');
@@ -18,22 +18,22 @@ const historyObj = {
 }
 
 const ophthalExamObj = {
-    keratitis : IDK,
-    kp : IDK,
-    antChamberCells : IDK,
-    antChamberFlare : IDK,
-    irisAtrophy : IDK,
-    posSynechiae : IDK,
-    heterochromia : IDK,
-    irisNodules : IDK,
-    endotheliitis : IDK,
-    endoLesions : IDK,
-    vitCells : IDK,
-    vitHaze : IDK,
-    vitritis : IDK,
-    choroiditis : IDK,
-    retinitis : IDK,
-    retVasChanges : IDK,
+    keratitis : DK,
+    kp : DK,
+    antChamberCells : DK,
+    antChamberFlare : DK,
+    irisAtrophy : DK,
+    posSynechiae : DK,
+    heterochromia : DK,
+    irisNodules : DK,
+    endotheliitis : DK,
+    endoLesions : DK,
+    vitCells : DK,
+    vitHaze : DK,
+    vitritis : DK,
+    choroiditis : DK,
+    retinitis : DK,
+    retVasChanges : DK,
     update : function () {
         this.keratitis = getSavedData('keratitis-el');
         this.kp = getSavedData('kp-el');
@@ -55,11 +55,11 @@ const ophthalExamObj = {
 }
 
 const pathologyObj = {
-    dermHZ : IDK,
-    oligoArth : IDK,
-    rfNegPolyArth : IDK,
-    juvPsorArth : IDK,
-    spondyloArth : IDK,
+    dermHZ : DK,
+    oligoArth : DK,
+    rfNegPolyArth : DK,
+    juvPsorArth : DK,
+    spondyloArth : DK,
     update : function (){
         this.dermHZ = getSavedData('dermHz-el');
         this.oligoArth = getSavedData('oligoArth-el');
@@ -71,14 +71,14 @@ const pathologyObj = {
 
 
 const labObj = {
-    posPcrCmv : IDK,
-    posPcrHsv : IDK,
-    posPcrVzv : IDK,
-    posHlaB27 : IDK,
-    posRenalBiopsy : IDK,
-    elUrineBM : IDK,
-    abUrineAn : IDK,
-    elSerumCr : IDK,
+    posPcrCmv : DK,
+    posPcrHsv : DK,
+    posPcrVzv : DK,
+    posHlaB27 : DK,
+    posRenalBiopsy : DK,
+    elUrineBM : DK,
+    abUrineAn : DK,
+    elSerumCr : DK,
     update : function (){
         this.posPcrCmv = getSavedData('posPcrCmv-el');
         this.posPcrHsv = getSavedData('posPcrHsv-el');
@@ -104,19 +104,20 @@ const patient = {
         ophthalExamObj.update();
         pathologyObj.update();
         labObj.update();
+        sessionStorage.setItem("patient",JSON.stringify(this));
     }
 }
 
 function getSavedData(id){
     if(!sessionStorage.getItem(id)){
-        return IDK;
+        return DK;
     }
     return sessionStorage.getItem(id);
 }
 
 function grade(val){
     if(val=='idk' || val==""){
-        return IDK;
+        return DK;
     }
     else {
         return parseInt(val);
