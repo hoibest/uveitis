@@ -30,3 +30,8 @@ function getSavedData(id){
     return sessionStorage.getItem(id)
 }
 
+function design(num){
+    document.getElementById('nav-greenbar').style.width = num*10 + "%"; 
+}
+
+
