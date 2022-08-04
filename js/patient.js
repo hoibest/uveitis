@@ -54,7 +54,7 @@ const ophthalExamObj = {
     }
 }
 
-const pathology = {
+const pathologyObj = {
     dermHZ : IDK,
     oligoArth : IDK,
     rfNegPolyArth : IDK,
@@ -70,14 +70,40 @@ const pathology = {
 }
 
 
+const labObj = {
+    posPcrCmv : IDK,
+    posPcrHsv : IDK,
+    posPcrVzv : IDK,
+    posHlaB27 : IDK,
+    posRenalBiopsy : IDK,
+    elUrineBM : IDK,
+    abUrineAn : IDK,
+    elSerumCr : IDK,
+    update : function (){
+        this.posPcrCmv = getSavedData('posPcrCmv-el');
+        this.posPcrHsv = getSavedData('posPcrHsv-el');
+        this.posPcrVzv = getSavedData('posPcrVzv-el');
+        this.posHlaB27 = getSavedData('posHlaB27-el');
+        this.posRenalBiopsy = getSavedData('posRenalBiopsy-el');
+        this.elUrineBM = getSavedData('elUrineBM-el');
+        this.abUrineAn = getSavedData('abUrineAn-el');
+        this.elSerumCr = getSavedData('elSerumCr-el');
+    }
+}
+
+
 
 
 const patient = {
     historyObj,
     ophthalExamObj,
+    pathologyObj,
+    labObj,
     patientUpdate : function () {
         historyObj.update();
         ophthalExamObj.update();
+        pathologyObj.update();
+        labObj.update();
     }
 }
 
