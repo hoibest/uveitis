@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="initial-scale=1.0, width=device-width" name="viewport">
+        <meta name="theme-color" content="#e64626">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/diagnosis.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                Uveitis
+            </div>
+        </header>
+        <div class="nav">
+            <div class="nav-content-wrapper">
+                <div class="nav-text-content">
+                    2/X History
+                </div>
+                <div class="nav-bar-content">
+                    <div class="nav-greenbar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="diagnosis-container">
+            <div class="row1">
+                <div>
+                <div class="row1-subtitle">Please select the characteristics in each box below</div>
+                <div class="row1-title">Ophthalmic Examination</div>
+                </div>
+            </div>
+            <div class="row2">
+                
+                <!----------------------------------------------------->
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom"><div>Vitreous Cells</div></div>
+                    <div class="input">
+                        <select id="vitCells-el" onchange="keepData(this)">
+                            <option value=''>Select</option>
+                            <option value=0>0</option>
+                            <option value=1/2>½+</option>
+                            <option value=1>1+</option>
+                            <option value=2>2+</option>
+                            <option value=3>3+</option>
+                            <option value=4>4+</option>
+                            <option value='idk'>Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom">Vitreous Haze</div>
+                    <div class="input">
+                        <select id="vitHaze-el" onchange="keepData(this)">
+                            <option value=''>Select</option>
+                            <option value=0>0</option>
+                            <option value=0.5>½+</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value='idk'>Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom">Vitritis</div>
+                    <div class="input">
+                        <select id="vitritis-el" onchange="keepData(this)">
+                            <option value="">Select</option>
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                            <option value="idk">Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom">Choroiditis</div>
+                    <div class="input">
+                        <select id="choroiditis-el" onchange="keepData(this)">
+                            <option value="">Select</option>
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                            <option value="idk">Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom">Retinitis</div>
+                    <div class="input">
+                        <select id="retinitis-el" onchange="keepData(this)">
+                            <option value="">Select</option>
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                            <option value="idk">Don't know</option>
+                        </select>
+                    </div>
+                </div>
+                <!----------------------------------------------------->
+                <!----------------------------------------------------->
+                <div class="row2-content">
+                    <div class="symptom">Retinal Vascular Changes</div>
+                    <div class="input">
+                        <select id="retVasChanges-el" onchange="keepData(this)">
+                            <option value="">Select</option>
+                            <option value="none">None</option>
+                            <option value="retVasSheathing">Peripheral Vascular Sheathing or Leakage</option>
+                            <option value="retlVasOcclusion">Retinal Vascular Occlusion</option>
+                            <option value='idk'>Don't know</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row3">
+                <div class="backNext">
+                    <div>
+                        <a href="diagnosis2.html"><button class="backButton" onclick="">Back</button></a>
+                    </div>
+                    <div class="nextDiv">
+                        <a href="diagnosis4.html"><button class="nextButton">Next</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                Developing Uveitis Classification Application
+            </div>
+        </footer>
+        <script src="./js/loading.js"></script>
+        <script src="./js/patient.js"></script>
+        <script>
+            let idList = ['vitCells-el','vitHaze-el','vitritis-el','choroiditis-el','retinitis-el',
+            'retVasChanges-el']
+            loadData(idList);
+        </script>
+    </body>
+</html>

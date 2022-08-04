@@ -98,12 +98,13 @@ header{
 
 
 footer{
-    background-color: #F5F5F5;
+    background-color: #e7765f;
     padding-top: 3.5rem;
     padding-bottom: 1.5rem;
     padding-left: 2rem;
 }
 
 .footer-content{
+    color: white;
     font-size: 0.75rem;
 }
