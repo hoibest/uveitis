@@ -1,4 +1,4 @@
-const DK = 'idk';
+const DK = `Don't know`;
 
 const historyObj = {
     age : DK,
@@ -116,7 +116,7 @@ function getSavedData(id){
 }
 
 function grade(val){
-    if(val=='idk' || val==""){
+    if(val==`Don't know` || val==""){
         return DK;
     }
     else {

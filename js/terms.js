@@ -55,7 +55,7 @@ function is(val,ans){
     if(val==ans){
         return TRUE;
     }
-    else if(val=='idk'){
+    else if(val==`Don't know`){
         return IDK;
     }
     else return FALSE;
@@ -82,7 +82,7 @@ function hsauRuleOne(){
 
     a = numIs(ANT_CHAMBER_CELLS);
     if(VIT_CELLS>0){
-        if(VIT_HAZE!='idk'&&ANT_CHAMBER_FLARE!='idk'){
+        if(VIT_HAZE!=`Don't know`&&ANT_CHAMBER_FLARE!=`Don't know`){
             if(VIT_HAZE >= ANT_CHAMBER_FLARE){
                 b = FALSE;
             }
@@ -137,14 +137,14 @@ function hsauRuleThree(){
         if(AGE=='lower16' || AGE=='bw17and50'){
             b = TRUE;
         }
-        else if(AGE=='idk'){
+        else if(AGE==`Don't know`){
             b = IDK;
         }
         else{
             b = FALSE;
         }
     }
-    else if(IRIS_ATROPHY=='idk'){
+    else if(IRIS_ATROPHY==`Don't know`){
         b = IDK;
     }
     else{

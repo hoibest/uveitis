@@ -29,7 +29,7 @@
     border-radius: 10px;
     width: 75%;
     margin-top: 1.5rem;
-    padding: 1rem 1.6rem;
+    padding: 1rem 1.6rem 1.5rem 1.6rem;
 }
 
 .result-box-title{
@@ -42,3 +42,4 @@
 }
 
 ol { margin: 0; padding-left: 1rem; }
+ul { margin: 0; padding-left: 1rem; }
