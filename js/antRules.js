@@ -18,6 +18,7 @@ function joinText(arr,slice){
 }
 
 const cmvauRule_1 = {
+    ruleName : "cmvau #1",
     rule : `<span class="haha" style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if anterior vitreous cells are present, anterior chamber inflammation should be present
@@ -30,6 +31,7 @@ const cmvauRule_1 = {
 }
 
 const cmvauRule_2 = {
+    ruleName : "cmvau #2",
     rule : `<span class="haha" style="font-weight: 500;">Evidence of cytomegalovirus infection in the eye</span>
     <ol type="a"><li> positive PCR for cytomegalovirus on aqueous specimen</ol>`,
     variableNames: [`PCR CMV(+)`],
@@ -241,12 +243,64 @@ const tinuRule_2 = {
     }
 }
 
+
+
 const cmvau = {
-    rules : [cmvauRule_1.rule,cmvauRule_1.userInput(),
-        cmvauRule_2.rule,cmvauRule_2.userInput()],
+    rules : [cmvauRule_1,cmvauRule_2],
     dxName : "Cytomegalovirus Anterior Uveitis",
     dxString : 'CMVAU',
-    ex : cmvauEx
+    ex : cmvauEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(cmvauList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(cmvauList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(cmvauList,cmvau,cmvau.checkResult);
+    }
+}
+
+function ruleIn(disList,dis,inResult){
+    if(dis.rules){
+        for(let i = 0; i < disList.inList.length; i++){
+            for(let j = 0; j < dis.rules.length; j++){
+                if(disList.inList[i]==dis.rules[j].ruleName){
+                    inResult.push(dis.rules[j].rule);
+                    inResult.push(dis.rules[j].userInput());
+                }
+            }
+        }
+    }
+}
+
+function ruleOut(disList,dis,outResult){
+    if(dis.rules){
+        for(let i = 0; i < disList.outList.length; i++){
+            for(let j = 0; j < dis.rules.length; j++){
+                if(disList.outList[i]==dis.rules[j].ruleName){
+                    outResult.push(dis.rules[j].rule);
+                    outResult.push(dis.rules[j].userInput());
+                }
+            }
+        }
+    }
+}
+
+function ruleCheck(disList,dis,checkResult){
+    if(dis.rules){
+        for(let i = 0; i < disList.checkList.length; i++){
+            for(let j = 0; j < dis.rules.length; j++){
+                if(disList.checkList[i]==dis.rules[j].ruleName){
+                    checkResult.push(dis.rules[j].rule);
+                    checkResult.push(dis.rules[j].userInput());
+                }
+            }
+        }
+    }
 }
 
 const antList = [cmvau]; 
@@ -256,7 +310,12 @@ function diagnosis(){
     for(let i = 0; i < dx.length; i++){
         for(let j = 0; j < antList.length; j++){
             if(antList[j].dxString==dx[i]){
-                document.getElementById('ruleIn-el').innerHTML = joinText(antList[j].rules,"<br>");
+                antList[j].ruleIn();
+                antList[j].ruleOut();
+                antList[j].ruleCheck();
+                document.getElementById('ruleIn-el').innerHTML = joinText(antList[j].inResult,"<br>");
+                document.getElementById('ruleOut-el').innerHTML = joinText(antList[j].outResult,"<br>");
+                document.getElementById('ruleCheck-el').innerHTML = joinText(antList[j].checkResult,"<br>");
                 document.getElementById('diagnosis-el').innerHTML = antList[j].dxName;
                 document.getElementById('exclusion-el').innerHTML = antList[j].ex;
             }
@@ -264,9 +323,13 @@ function diagnosis(){
     }
 }
 
-diagnosis();
+//diagnosis();
 
-
-
+antList[0].ruleIn();
+antList[0].ruleOut();
+antList[0].ruleCheck();
+document.getElementById('ruleIn-el').innerHTML = joinText(antList[0].inResult,"<br>");
+document.getElementById('ruleOut-el').innerHTML = joinText(antList[0].outResult,"<br>");
+document.getElementById('ruleCheck-el').innerHTML = joinText(antList[0].checkResult,"<br>");
 
 

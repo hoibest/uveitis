@@ -61,7 +61,7 @@ function is(val,ans){
     else if(val==`Don't know`){
         return IDK;
     }
-    else return FALSE;
+    else {return FALSE;}
 }
 
 function numIs(val){
@@ -111,7 +111,7 @@ function cmvauRuleOne(){
     c = is(RETINITIS,"no")
 
     if(a==FALSE||b==FALSE||c==FALSE){disList.outList.push(rule);}
-    else if(a==TRUE&&b==TRUE&&c==TRUE){disList.inList.push(rule);}
+    else if(a==TRUE&&b==TRUE&&c==TRUE){disList.inList.push(rule);console.log("e")}
     else{disList.checkList.push(rule);}
 }
 
@@ -121,10 +121,11 @@ function cmvauRuleTwo(){
     let a = IDK;
 
     a = is(POS_PCR_CMV,"yes")
+    console.log(a)
 
-    if(a==FALSE){disList.outList.push(rule);}
-    else if(a==TRUE){disList.inList.push(rule);}
-    else{disList.checkList.push(rule);}
+    if(a==FALSE){disList.outList.push(rule);console.log("false")}
+    else if(a==TRUE){disList.inList.push(rule); console.log("true")}
+    else{disList.checkList.push(rule);console.log("check")}
 }
 
 function cmvauDiagnosis(result){

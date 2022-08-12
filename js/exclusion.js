@@ -1,4 +1,4 @@
-let cmvauEx = 
+const cmvauEx = 
 `<ol><li>Positive serology for syphilis using a treponemal test
 <li>Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)
 <li>Aqueous specimen PCR positive for herpes simplex virus or varicella zoster virus</ol>`
