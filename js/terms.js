@@ -44,12 +44,15 @@ const EL_SERUM_CR = p.labObj.elSerumCr;
 const TRUE = 1;
 const FALSE = 0;
 const IDK = 2;
+const dk = `Don't know`
 
 class ruleList {
     inList = [];
     outList = [];
     checkList = [];
 };
+
+dxList = [];
 
 function is(val,ans){
     if(val==ans){
@@ -73,7 +76,72 @@ function numIs(val){
     }
 }
 
+let cmvauList = new ruleList();
 let hsauList = new ruleList();
+let vzvauList = new ruleList();
+let fusList = new ruleList();
+let jiacauList = new ruleList();
+let sauList = new ruleList();
+let tinuList = new ruleList();
+
+function cmvauRuleOne(){
+    let rule = 'cmvau #1';
+    let disList = cmvauList;
+    let a = IDK; let b = IDK; let c = IDK;
+    a = numIs(ANT_CHAMBER_CELLS);
+    if(VIT_CELLS > 0){
+        if(ANT_CHAMBER_FLARE != "Don't know"){
+            if(ANT_CHAMBER_FLARE > 0){
+                b = TRUE;
+            }
+            else{
+                b = FALSE;
+            }
+        }
+        else {
+            b = IDK;
+        }
+    }
+    else if(VIT_CELLS==0){
+        b = TRUE;
+    }
+    else{
+        b = IDK;
+    }
+    c = is(RETINITIS,"no")
+
+    if(a==FALSE||b==FALSE||c==FALSE){disList.outList.push(rule);}
+    else if(a==TRUE&&b==TRUE&&c==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);}
+}
+
+function cmvauRuleTwo(){
+    let rule = 'cmvau #2';
+    let disList = cmvauList;
+    let a = IDK;
+
+    a = is(POS_PCR_CMV,"yes")
+
+    if(a==FALSE){disList.outList.push(rule);}
+    else if(a==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);}
+}
+
+function cmvauDiagnosis(result){
+    let disList = cmvauList;
+    cmvauRuleOne();
+    cmvauRuleTwo();
+    if(disList.outList.includes('cmvau #1')||disList.outList.includes('cmvau #2')){
+        cmvauList.checkList.length=0;
+    }
+    else if(disList.inList.includes('cmvau #1')&&disList.inList.includes('cmvau #2')){
+        dxList.push('CMVAU')
+        cmvauList.checkList.length=0;
+    }
+    else{
+        
+    }
+}
 
 function hsauRuleOne(){
     let rule = 'hsau #1';
@@ -173,6 +241,495 @@ function hsauDiagnosis(){
     }
 }
 
-hsauDiagnosis();
-console.log('hi');
+function vzvauRuleOne(){
+    let rule = 'vzvau #1';
+    let disList = vzvauList;
+    let a = IDK; let b = IDK; let c = IDK;
+    a = numIs(ANT_CHAMBER_CELLS);
+    if(VIT_CELLS>0){
+        if(VIT_HAZE!=dk&&ANT_CHAMBER_FLARE!=dk){
+            if(VIT_HAZE >= ANT_CHAMBER_FLARE){
+                b = FALSE;
+            }
+            else{
+                b = TRUE;
+            }
+        }
+        else{
+            b = IDK;
+        }
+    }
+    else if(VIT_CELLS==0){
+        b = TRUE;
+    }
+    else { //vitCells == idk
+        b = IDK;
+    }
+    c = is(RETINITIS,"no");
+
+    if(a==FALSE||b==FALSE||c==FALSE){
+        disList.outList.push(rule);
+    }
+    else if(a==TRUE&&b==TRUE&&c==TRUE){
+        disList.inList.push(rule);
+    }
+    else{
+        disList.checkList.push(rule);
+    }
+}
+
+function vzvauRuleTwo(){
+    let rule = 'vzvau #2';
+    let disList = vzvauList;
+    let a = IDK;
+    if(POS_PCR_VZV=="yes"){
+        a = TRUE;
+    }
+    else{
+        a = is(LATERALITY,"monoUnilateral");
+    }
+    if(a==FALSE){disList.outList.push(rule)}
+    else if(a==TRUE){disList.inList.push(rule)}
+    else{disList.checkList.push(rule)}
+}
+
+function vzvauRuleThree(){
+    let rule = 'vzvau #3'
+    let disList = vzvauList;
+    let a = IDK; let b = IDK; let c = IDK;
+    a = is(POS_PCR_VZV,"yes");
+    if(IRIS_ATROPHY=='sectoral'){
+        if(AGE=='higher60'){
+            b = TRUE;
+        }
+        else if(AGE==dk){
+            b = IDK;
+        }
+        else{
+            b = FALSE;
+        }
+    }
+    else if(IRIS_ATROPHY==dk){
+        b = IDK;
+    }
+    else{
+        b = FALSE;
+    }
+    c = is(DERM_HZ,"yes");
+    if(a==FALSE&&b==FALSE&&c==FALSE){disList.outList.push(rule);}
+    else if(a==TRUE||b==TRUE||c==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);}
+}
+
+function vzvauDiagnosis(){
+    let disList = vzvauList;
+    vzvauRuleOne();
+    vzvauRuleTwo();
+    vzvauRuleThree();
+    if(disList.outList.includes('vzvau #1')||disList.outList.includes('vzvau #2')||disList.outList.includes('vzvau #3')){
+        disList.checkList.length=0;
+    }
+    else if(disList.inList.includes('vzvau #1')&&disList.inList.includes('vzvau #2')&&disList.inList.includes('vzvau #3')){
+        dxList.push('VZVAU')
+        disList.checkList.length=0;
+    }
+    else{
+        
+    }
+}
+
+function fusRuleOne(){
+    let rule = 'fus #1';
+    let disList = fusList;
+    let a = IDK; let b = IDK; let c = IDK;
+
+    a = numIs(ANT_CHAMBER_CELLS)
+
+    if(VIT_CELLS > 0){ //vitCells exist
+        if(ANT_CHAMBER_FLARE!=dk){
+            if(ANT_CHAMBER_FLARE > 0){
+                b = TRUE;
+            }
+            else{
+                b = FALSE;
+            }
+        }
+        else{
+            b = IDK;
+        }
+    }
+    else if(VIT_CELLS == 0){
+        b = TRUE;
+    }
+    else{
+        b = IDK;
+    }
+
+    c = is(RETINITIS,"no");
+
+    // a and b and c 
+    if(a==FALSE||b==FALSE||c==FALSE){disList.outList.push(rule);}
+    else if(a==TRUE&&b==TRUE&&c==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);}
+}
+
+function fusRuleTwo(){
+    let rule = 'fus #2';
+    let disList = fusList;
+    let a = IDK;
+    a = is(LATERALITY,"monoUnilateral");
+    if(a==FALSE){disList.outList.push(rule);}
+    else if(a==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);}
+}
+
+function fusRuleThree(){
+    let rule = 'fus #3';
+    let disList = fusList;
+    let a = IDK; let b = IDK;
+    a = is(HETEROCHROMIA,"yes");
+    if(IRIS_ATROPHY=='diffuse'){
+        if(KP=='stellate'){
+            b = TRUE;
+        }
+        else if(KP=='idk'){
+            b = IDK;
+        }
+        else{
+            b = FALSE;
+        }
+    }
+    else if(IRIS_ATROPHY==dk){
+        b = IDK;
+    }
+    else{
+        b = FALSE;
+    }
+
+    if(a==FALSE&&b==FALSE){disList.outList.push(rule)}
+    else if(a==TRUE||b==TRUE){disList.inList.push(rule)}
+    else{disList.checkList.push(rule)}
+}
+
+function fusRuleFour(){
+    let rule = 'fus #4'
+    let disList = fusList;
+    let a = IDK; let b = IDK;
+    a = is(ENDOTHELIITIS,"no");
+    b = is(ENDO_LESIONS,"no");
+    if(a==FALSE||b==FALSE){disList.outList.push(rule)}
+    else if(a==TRUE&&b==TRUE){disList.inList.push(rule)}
+    else{disList.checkList.push(rule)}
+}
+
+function fusDiagnosis(){
+    let disList = fusList;
+    fusRuleOne();
+    fusRuleTwo();
+    fusRuleThree();
+    fusRuleFour();
+    if(disList.outList.includes('fus #1')||disList.outList.includes('fus #2')||
+    disList.outList.includes('fus #3')||disList.outList.includes('fus #4')){
+        disList.checkList.length=0;
+    }
+    else if(disList.inList.includes('fus #1')&&disList.inList.includes('fus #2')&&
+    disList.inList.includes('fus #3')&&disList.inList.includes('fus #4')){
+        dxList.push('FUS')
+        disList.checkList.length=0;
+    }
+    else{
+        
+    }
+}
+
+function jiacauRuleOne(){
+    let rule = 'jiacau #1';
+    let disList = jiacauList;
+    let a = IDK; let b = IDK;
+
+    a = numIs(ANT_CHAMBER_CELLS);
+    if(VIT_CELLS>0){
+        if(VIT_HAZE!=dk&&ANT_CHAMBER_FLARE!=dk){
+            if(VIT_HAZE >= ANT_CHAMBER_FLARE){
+                b = FALSE;
+            }
+            else{
+                b = TRUE;
+            }
+        }
+        else{
+            b = IDK;
+        }
+    }
+    else if(VIT_CELLS==0){
+        b = TRUE;
+    }
+    else { //vitCells == idk
+        b = IDK;
+    }
+    
+    if(a==FALSE||b==FALSE){
+        disList.outList.push(rule);
+    }
+    else if(a==TRUE&&b==TRUE){
+        disList.inList.push(rule);
+    }
+    else{
+        disList.checkList.push(rule);
+    } 
+}
+
+function jiacauRuleTwo(){
+    let rule = 'jiacau #2';
+    let disList = jiacauList;
+    let a = IDK;
+
+    a = is(COURSE,'chronic');
+    if(a==FALSE){disList.outList.push(rule)}
+    else if(a==TRUE){disList.inList.push(rule)}
+    else{disList.checkList.push(rule)}
+}
+
+function jiacauRuleThree(){
+    let rule = 'jiacau #3'
+    let disList = jiacauList;
+    let a = IDK; let b = IDK; let c = IDK;
+    a = is(OLIGO_ARTH,"yes");
+    b = is(RF_NEG_POLY_ARTH,"yes");
+    c = is(JUV_PSOR_ARTH,"yes");
+    if(a==FALSE&&b==FALSE&&c==FALSE){disList.outList.push(rule);}
+    else if(a==TRUE||b==TRUE||c==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);}
+}
+
+function jiacauDiagnosis(){
+    let disList = jiacauList;
+    jiacauRuleOne();
+    jiacauRuleTwo();
+    jiacauRuleThree();
+    if(disList.outList.includes('jiacau #1')||disList.outList.includes('jiacau #2')||disList.outList.includes('jiacau #3')){
+        disList.checkList.length=0;
+    }
+    else if(disList.inList.includes('jiacau #1')&&disList.inList.includes('jiacau #2')&&disList.inList.includes('jiacau #3')){
+        dxList.push('JIACAU')
+        disList.checkList.length=0;
+    }
+    else{
+        
+    }
+}
+
+function sauRuleOne(){
+    let rule = 'sau #1';
+    let disList = sauList;
+    let a = IDK; let b = IDK;
+
+    a = numIs(ANT_CHAMBER_CELLS);
+    if(VIT_CELLS>0){
+        if(VIT_HAZE!=dk&&ANT_CHAMBER_FLARE!=dk){
+            if(VIT_HAZE >= ANT_CHAMBER_FLARE){
+                b = FALSE;
+            }
+            else{
+                b = TRUE;
+            }
+        }
+        else{
+            b = IDK;
+        }
+    }
+    else if(VIT_CELLS==0){
+        b = TRUE;
+    }
+    else { //vitCells == idk
+        b = IDK;
+    }
+    
+    if(a==FALSE||b==FALSE){
+        disList.outList.push(rule);
+    }
+    else if(a==TRUE&&b==TRUE){
+        disList.inList.push(rule);
+    }
+    else{
+        disList.checkList.push(rule);
+    } 
+}
+
+function sauRuleTwo(){
+    let rule = 'sau #2'
+    let disList = sauList;
+    let a = IDK; let b = IDK;
+    if(COURSE=='acuteMonophasic'||COURSE=='acuteRecurrent'){
+        if(LATERALITY=='monoUnilateral'||LATERALITY=='unilateralAlternating'){
+            a = TRUE;
+        }
+        else if(LATERALITY==dk){
+            a = IDK;
+        }
+        else{
+            a = FALSE;
+        }
+    }
+    else if(COURSE==dk){
+        a = IDK;
+    }
+    else{
+        a = FALSE;
+    }
+
+    if(COURSE=='chronic'){
+        if(LATERALITY=='monoUnilateral'||LATERALITY=='unilateralAlternating'){
+            b = TRUE;
+        }
+        else if(LATERALITY==dk){
+            b = IDK;
+        }
+        else{
+            b = FALSE;
+        }
+    }
+    else if(COURSE==dk){
+        b = IDK;
+    }
+    else{
+        b = FALSE;
+    }
+    if(a==FALSE&&b==FALSE){disList.outList.push(rule);}
+    else if(a==TRUE||b==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);}
+}
+
+function sauRuleThree(){
+    let rule = 'sau #3';
+    let disList = sauList;
+    let a = IDK;
+    a = is(SPONDYLO_ARTH,"yes");
+    if(a==FALSE){disList.outList.push(rule)}
+    else if(a==TRUE){disList.inList.push(rule)}
+    else{disList.checkList.push(rule)}
+}
+
+function sauRuleFour(){
+    let rule = 'sau #4'
+    let disList = sauList;
+    let a = IDK; let b = IDK; let c = IDK;
+    a = is(COURSE,'chronic');
+    b = is(SPONDYLO_ARTH,'yes');
+    c = is(POS_HLA_B27,'yes');
+    if(a==FALSE||b==FALSE||c==FALSE){disList.outList.push(rule)}
+    else if(a==TRUE&&b==TRUE&&c==TRUE){disList.inList.push(rule)}
+    else{disList.checkList.push(rule)}
+}
+
+function sauDiagnosis(){
+    let disList = sauList;
+    sauRuleOne(); sauRuleTwo(); sauRuleThree(); sauRuleFour();
+    if(disList.outList.includes('sau #1')||((disList.outList.includes('sau #2')||
+    disList.outList.includes('sau #3'))&&disList.outList.includes('sau #4'))){
+        disList.checkList.length=0;
+    }
+    else if(disList.inList.includes('sau #1') && 
+    ((disList.inList.includes('sau #2') && disList.inList.includes('sau #3')) || disList.inList.includes('sau #4'))){
+        dxList.push('SAU')
+        disList.checkList.length=0;
+    }
+    else{
+        
+    }
+    
+}
+
+function tinuRuleOne(){
+    let rule = 'tinu #1';
+    let disList = tinuList;
+    let a = IDK; let b = IDK;
+    a = numIs(ANT_CHAMBER_CELLS);
+    if(VITRITIS=='no'&&CHOROIDITIS=='no'&&RET_VAS_CHANGES=='none'){
+        b = TRUE;
+    }
+    else if(VITRITIS=='yes'||CHOROIDITIS=='yes'||(RET_VAS_CHANGES!=dk&&RET_VAS_CHANGES!='none')){
+        b = numIs(ANT_CHAMBER_FLARE);
+    }
+    else{
+        b = IDK;
+    }
+
+    if(a==FALSE||b==FALSE){
+        disList.outList.push(rule);
+    }
+    else if(a==TRUE&&b==TRUE){
+        disList.inList.push(rule);
+    }
+    else{
+        disList.checkList.push(rule);
+    } 
+}
+
+function tinuRuleTwo(){
+    let rule = 'tinu #2';
+    let disList = tinuList;
+    let a = IDK; let b = IDK;
+    a = is(POS_RENAL_BIOPSY,"yes");
+    
+    if(EL_URINE_BM=='yes'){
+        if(EL_SERUM_CR=='yes'||AB_URINE_AN=='yes'){
+            b = TRUE;
+        }
+        else if(EL_SERUM_CR=='no'&&AB_URINE_AN=='no'){
+            b= FALSE;
+        }
+        else{
+            b = IDK;
+        }
+    }
+    else if(p.EL_URINE_BM==dk){
+        b = IDK;
+    }
+    else{
+        b = FALSE;
+    }
+    
+
+    if(a==FALSE&&b==FALSE){
+        disList.outList.push(rule);
+    }
+    else if(a==TRUE||b==TRUE){
+        disList.inList.push(rule);
+    }
+    else{
+        disList.checkList.push(rule);
+    } 
+}
+
+function tinuDiagnosis(){
+    let disList = tinuList;
+    tinuRuleOne();
+    tinuRuleTwo();
+    if(disList.outList.includes('tinu #1')||disList.outList.includes('tinu #2')){
+        disList.checkList.length=0;
+    }
+    else if(disList.inList.includes('tinu #1')&&disList.inList.includes('tinu #2')){
+        dxList.push('TINU')
+        disList.checkList.length=0;
+    }
+    else{
+        
+    }
+}
+
+function antDiagnosis(){
+    cmvauDiagnosis();
+    hsauDiagnosis();
+    vzvauDiagnosis();
+    fusDiagnosis();
+    jiacauDiagnosis();
+    sauDiagnosis();
+    tinuDiagnosis();
+    sessionStorage.setItem("dxList",JSON.stringify(dxList));
+}
+
+antDiagnosis();
+
+
 
