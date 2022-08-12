@@ -241,19 +241,27 @@ const tinuRule_2 = {
     }
 }
 
+const cmvau = {
+    rules : [cmvauRule_1.rule,cmvauRule_1.userInput(),
+        cmvauRule_2.rule,cmvauRule_2.userInput()],
+    dxName : "Cytomegalovirus Anterior Uveitis",
+    dxString : 'CMVAU',
+    ex : cmvauEx
+}
+
+const antList = [cmvau]; 
+
 function diagnosis(){
     const dx = JSON.parse(sessionStorage.dxList);
     for(let i = 0; i < dx.length; i++){
-        if(dx[i]==`CMVAU`){
-            document.getElementById('ruleIn-el').innerHTML = joinText([
-                cmvauRule_1.rule,cmvauRule_1.userInput(),
-                cmvauRule_2.rule,cmvauRule_2.userInput(),
-                
-                
-                ],"<br>")
+        for(let j = 0; j < antList.length; j++){
+            if(antList[j].dxString==dx[i]){
+                document.getElementById('ruleIn-el').innerHTML = joinText(antList[j].rules,"<br>");
+                document.getElementById('diagnosis-el').innerHTML = antList[j].dxName;
+                document.getElementById('exclusion-el').innerHTML = antList[j].ex;
+            }
         }
     }
-    console.log(dx);
 }
 
 diagnosis();
