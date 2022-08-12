@@ -53,6 +53,8 @@ class ruleList {
 };
 
 dxList = [];
+exList = [];
+possList = [];
 
 function is(val,ans){
     if(val==ans){
@@ -133,6 +135,7 @@ function cmvauDiagnosis(result){
     cmvauRuleOne();
     cmvauRuleTwo();
     if(disList.outList.includes('cmvau #1')||disList.outList.includes('cmvau #2')){
+        exList.push('CMVAU')
         cmvauList.checkList.length=0;
     }
     else if(disList.inList.includes('cmvau #1')&&disList.inList.includes('cmvau #2')){
@@ -140,7 +143,7 @@ function cmvauDiagnosis(result){
         cmvauList.checkList.length=0;
     }
     else{
-        
+        possList.push('CMVAU')
     }
 }
 
