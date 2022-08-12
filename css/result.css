@@ -44,7 +44,8 @@
 
 .result-box-contents{
     margin-top: 1rem;
+    padding: 1rem;
 }
 
-ol { margin: 0; padding-left: 1rem; }
-ul { margin: 0; padding-left: 1rem; }
+ol { margin: 0; padding-left: 0rem; }
+ul { margin: 0; padding-left: 0rem; }
