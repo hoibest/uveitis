@@ -47,5 +47,9 @@
     padding: 1rem;
 }
 
-ol { margin: 0; padding-left: 0rem; }
-ul { margin: 0; padding-left: 0rem; }
+ol { margin: 0; padding-left: 0rem; color: rgb(49, 45, 45);}
+ul { margin: 0; padding-left: 0rem; color: rgb(49, 45, 45);}
+
+.haha{
+    color: black;
+}

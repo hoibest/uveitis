@@ -18,7 +18,7 @@ function joinText(arr,slice){
 }
 
 const cmvauRule_1 = {
-    rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
+    rule : `<span class="haha" style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if anterior vitreous cells are present, anterior chamber inflammation should be present
     <li> no evidence of retinitis</ol>`,
@@ -30,7 +30,7 @@ const cmvauRule_1 = {
 }
 
 const cmvauRule_2 = {
-    rule : `<span style="font-weight: 500;">Evidence of cytomegalovirus infection in the eye</span>
+    rule : `<span class="haha" style="font-weight: 500;">Evidence of cytomegalovirus infection in the eye</span>
     <ol type="a"><li> positive PCR for cytomegalovirus on aqueous specimen</ol>`,
     variableNames: [`PCR CMV(+)`],
     variableValues: [POS_PCR_CMV],
