@@ -317,10 +317,10 @@ const vzvau = {
         ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(this.disList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,this,this.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,this,this.checkResult);
     }
 }
 
@@ -337,10 +337,10 @@ const fus = {
         ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(this.disList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,this,this.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,this,this.checkResult);
     }
 }
 
@@ -357,10 +357,10 @@ const jiacau = {
         ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(this.disList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,this,this.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,this,this.checkResult);
     }
 }
 
@@ -377,10 +377,10 @@ const sau = {
         ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(this.disList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,this,this.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,this,this.checkResult);
     }
 }
 
@@ -397,10 +397,10 @@ const tinu = {
         ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(this.disList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,this,this.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,this,this.checkResult);
     }
 }
 
