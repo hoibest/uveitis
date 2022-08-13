@@ -25,7 +25,7 @@ const CHOROIDITIS = p.ophthalExamObj.choroiditis;
 const RETINITIS = p.ophthalExamObj.retinitis;
 const RET_VAS_CHANGES = p.ophthalExamObj.retVasChanges;
 ///////////////////////////////////////////////////////////////////////
-const DERM_HZ = p.pathologyObj.dermHz;
+const DERM_HZ = p.pathologyObj.dermHZ;
 const OLIGO_ARTH = p.pathologyObj.oligoArth;
 const RF_NEG_POLY_ARTH = p.pathologyObj.rfNegPolyArth;
 const JUV_PSOR_ARTH = p.pathologyObj.juvPsorArth;

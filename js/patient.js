@@ -61,7 +61,7 @@ const pathologyObj = {
     juvPsorArth : DK,
     spondyloArth : DK,
     update : function (){
-        this.dermHZ = getSavedData('dermHz-el');
+        this.dermHZ = getSavedData('dermHZ-el');
         this.oligoArth = getSavedData('oligoArth-el');
         this.rfNegPolyArth = getSavedData('rfNegPolyArth-el');
         this.juvPsorArth = getSavedData('juvPsorArth-el');
