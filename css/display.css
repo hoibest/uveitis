@@ -1,0 +1,62 @@
+.display-title{
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.c-uveitides{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.c-item{
+    padding: 0.6rem 1rem;
+    font-weight: 400;
+    border-bottom: 1px dotted grey;
+    border-right: 1rem solid #59A77D;
+}
+
+.c-path {
+    text-decoration: none;
+    color: black;
+}
+
+.p-uveitides{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.p-item{
+    padding: 0.6rem 1rem;
+    font-weight: 400;
+    border-bottom: 1px dotted grey;
+    border-right: 1rem solid #C1F3AF;
+}
+
+.p-path {
+    text-decoration: none;
+    color: black;
+}
+
+.e-uveitides{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.e-item{
+    padding: 0.6rem 1rem;
+    font-weight: 400;
+    border-bottom: 1px dotted grey;
+    border-right: 1rem solid #FA5C5C;
+}
+
+.e-path {
+    text-decoration: none;
+    color: black;
+}
+

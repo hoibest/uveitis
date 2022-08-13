@@ -4,7 +4,7 @@
         <meta content="initial-scale=1.0, width=device-width" name="viewport">
         <meta name="theme-color" content="#e64626">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/result.css">
+        <link rel="stylesheet" href="css/display.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     </head>
@@ -24,36 +24,16 @@
                 </div>
             </div>
         </div>
-        <div class="result-container">
-            <div class="result-title">
-                <div class="result-subtitle">The uveitis is classified as : </div>
-                <div class="result-maintitle" id="diagnosis-el">Herpes Simplex Anterior Uveitis</div>
-            </div>
-            <div class="result-box">
-                <div class="result-box-title">Evidence for this uveitis :</div>
-                <div class="result-box-contents" id="ruleIn-el">
-                    N/A
-                </div>
-            </div>
-            <div class="result-box">
-                <div class="result-box-title">Evidence against this uveitis :</div>
-                <div class="result-box-contents" id="ruleOut-el">
-                    N/A
-                </div>
-            </div>
-            <div class="result-box">
-                <div class="result-box-title">Evidence required check :</div>
-                <div class="result-box-contents" id="ruleCheck-el">
-                    N/A
-                </div>
-            </div>
-            <div class="result-box">
-                <div class="result-box-title">Exclude classification if :</div>
-                <div class="result-box-contents" id="exclusion-el">
-                    N/A
-                </div>
-            </div>
+        <div class="display-title">Result</div>
+        <div class="uveitides">
+            <div class="c-uveitides">Classified Anterior Uveitides</div>
+            <div id="c-uveitides"></div>
+            <div class="p-uveitides">Possible Anterior Uveitides</div>
+            <div id="p-uveitides"></div>
+            <div class="e-uveitides">Excluded Anterior Uveitides</div>
+            <div id="e-uveitides"></div>
         </div>
+        
         <a href="diagnosis5.html"><button>Button</button></a>
         <a href="exResult.html"><button>Excluded classification</button></a>
         
@@ -70,5 +50,6 @@
         </script>
         <script src="./js/terms.js"></script>
         <script src="./js/antRules.js"></script>
+        <script src="./js/display.js"></script>
     </body>
 </html>

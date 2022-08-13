@@ -52,15 +52,15 @@ class ruleList {
     checkList = [];
 };
 
-dxList = [];
-exList = [];
-possList = [];
+let dxList = [];
+let exList = [];
+let possList = [];
 
 function is(val,ans){
     if(val==ans){
         return TRUE;
     }
-    else if(val==`Don't know`){
+    else if(val==dk){
         return IDK;
     }
     else {return FALSE;}
@@ -92,7 +92,7 @@ function cmvauRuleOne(){
     let a = IDK; let b = IDK; let c = IDK;
     a = numIs(ANT_CHAMBER_CELLS);
     if(VIT_CELLS > 0){
-        if(ANT_CHAMBER_FLARE != "Don't know"){
+        if(ANT_CHAMBER_FLARE != dk){
             if(ANT_CHAMBER_FLARE > 0){
                 b = TRUE;
             }
@@ -113,8 +113,8 @@ function cmvauRuleOne(){
     c = is(RETINITIS,"no")
 
     if(a==FALSE||b==FALSE||c==FALSE){disList.outList.push(rule);}
-    else if(a==TRUE&&b==TRUE&&c==TRUE){disList.inList.push(rule);console.log("e")}
-    else{disList.checkList.push(rule);}
+    else if(a==TRUE&&b==TRUE&&c==TRUE){disList.inList.push(rule);}
+    else{disList.checkList.push(rule);console.log("e");}
 }
 
 function cmvauRuleTwo(){
@@ -136,11 +136,9 @@ function cmvauDiagnosis(result){
     cmvauRuleTwo();
     if(disList.outList.includes('cmvau #1')||disList.outList.includes('cmvau #2')){
         exList.push('CMVAU')
-        cmvauList.checkList.length=0;
     }
     else if(disList.inList.includes('cmvau #1')&&disList.inList.includes('cmvau #2')){
         dxList.push('CMVAU')
-        cmvauList.checkList.length=0;
     }
     else{
         possList.push('CMVAU')
@@ -234,14 +232,13 @@ function hsauDiagnosis(){
     hsauRuleTwo();
     hsauRuleThree();
     if(disList.outList.includes('hsau #1')||disList.outList.includes('hsau #2')||disList.outList.includes('hsau #3')){
-        disList.checkList.length=0;
+        exList.push('HSAU');
     }
     else if(disList.inList.includes('hsau #1')&&disList.inList.includes('hsau #2')&&disList.inList.includes('hsau #3')){
-        dxList.push('HSAU')
-        disList.checkList.length=0;
+        dxList.push('HSAU');
     }
     else{
-        
+        possList.push('HSAU');
     }
 }
 
@@ -331,14 +328,13 @@ function vzvauDiagnosis(){
     vzvauRuleTwo();
     vzvauRuleThree();
     if(disList.outList.includes('vzvau #1')||disList.outList.includes('vzvau #2')||disList.outList.includes('vzvau #3')){
-        disList.checkList.length=0;
+        exList.push('VZVAU');
     }
     else if(disList.inList.includes('vzvau #1')&&disList.inList.includes('vzvau #2')&&disList.inList.includes('vzvau #3')){
-        dxList.push('VZVAU')
-        disList.checkList.length=0;
+        dxList.push('VZVAU');
     }
     else{
-        
+        possList.push('VZVAU');
     }
 }
 
@@ -434,15 +430,14 @@ function fusDiagnosis(){
     fusRuleFour();
     if(disList.outList.includes('fus #1')||disList.outList.includes('fus #2')||
     disList.outList.includes('fus #3')||disList.outList.includes('fus #4')){
-        disList.checkList.length=0;
+        exList.push('FUS');
     }
     else if(disList.inList.includes('fus #1')&&disList.inList.includes('fus #2')&&
     disList.inList.includes('fus #3')&&disList.inList.includes('fus #4')){
-        dxList.push('FUS')
-        disList.checkList.length=0;
+        dxList.push('FUS');
     }
     else{
-        
+        possList.push('FUS');
     }
 }
 
@@ -512,14 +507,13 @@ function jiacauDiagnosis(){
     jiacauRuleTwo();
     jiacauRuleThree();
     if(disList.outList.includes('jiacau #1')||disList.outList.includes('jiacau #2')||disList.outList.includes('jiacau #3')){
-        disList.checkList.length=0;
+        exList.push('JIACAU');
     }
     else if(disList.inList.includes('jiacau #1')&&disList.inList.includes('jiacau #2')&&disList.inList.includes('jiacau #3')){
-        dxList.push('JIACAU')
-        disList.checkList.length=0;
+        dxList.push('JIACAU');
     }
     else{
-        
+        possList.push('JIACAU');
     }
 }
 
@@ -631,15 +625,14 @@ function sauDiagnosis(){
     sauRuleOne(); sauRuleTwo(); sauRuleThree(); sauRuleFour();
     if(disList.outList.includes('sau #1')||((disList.outList.includes('sau #2')||
     disList.outList.includes('sau #3'))&&disList.outList.includes('sau #4'))){
-        disList.checkList.length=0;
+        exList.push('SAU');
     }
     else if(disList.inList.includes('sau #1') && 
     ((disList.inList.includes('sau #2') && disList.inList.includes('sau #3')) || disList.inList.includes('sau #4'))){
-        dxList.push('SAU')
-        disList.checkList.length=0;
+        dxList.push('SAU');
     }
     else{
-        
+        possList.push('SAU');
     }
     
 }
@@ -711,14 +704,13 @@ function tinuDiagnosis(){
     tinuRuleOne();
     tinuRuleTwo();
     if(disList.outList.includes('tinu #1')||disList.outList.includes('tinu #2')){
-        disList.checkList.length=0;
+        exList.push('TINU');
     }
     else if(disList.inList.includes('tinu #1')&&disList.inList.includes('tinu #2')){
-        dxList.push('TINU')
-        disList.checkList.length=0;
+        dxList.push('TINU');
     }
     else{
-        
+        possList.push('TINU');
     }
 }
 
@@ -730,7 +722,6 @@ function antDiagnosis(){
     jiacauDiagnosis();
     sauDiagnosis();
     tinuDiagnosis();
-    sessionStorage.setItem("dxList",JSON.stringify(dxList));
 }
 
 antDiagnosis();

@@ -246,6 +246,7 @@ const tinuRule_2 = {
 
 
 const cmvau = {
+    disList : cmvauList,
     rules : [cmvauRule_1,cmvauRule_2],
     dxName : "Cytomegalovirus Anterior Uveitis",
     dxString : 'CMVAU',
@@ -254,15 +255,175 @@ const cmvau = {
     outResult : [],
     checkResult : [],
     ruleIn : function() {
-        ruleIn(cmvauList,this,this.inResult);
+        ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(cmvauList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,cmvau,cmvau.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(cmvauList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
     }
 }
+
+const hsau = {
+    disList : hsauList,
+    rules : [hsauRule_1,hsauRule_2,hsauRule_3],
+    dxName : "Herpes Simplex Anterior Uveitis",
+    dxString : 'HSAU',
+    ex : hsauEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}
+
+const vzvau = {
+    disList : vzvauList,
+    rules : [vzvauRule_1,vzvauRule_2,vzvauRule_3],
+    dxName : "Varicella Zoster Virus Anterior Uveitis",
+    dxString : 'VZVAU',
+    ex : vzvauEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}
+
+const fus = {
+    disList : fusList,
+    rules : [fusRule_1,fusRule_2,fusRule_3,fusRule_4],
+    dxName : "Fuchs Uveitis Syndrome",
+    dxString : 'FUS',
+    ex : fusEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}
+
+const jiacau = {
+    disList : jiacauList,
+    rules : [jiacauRule_1,jiacauRule_2,jiacauRule_3],
+    dxName : "Juvenile Idiopathic Arthritis-associated Chronic Anterior Uveitis",
+    dxString : 'JIACAU',
+    ex : jiacauEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}
+
+const sau = {
+    disList : sauList,
+    rules : [sauRule_1,sauRule_2,sauRule_3,sauRule_4],
+    dxName : "Spondyloarthritis/HLA-B27-associated Anterior Uveitis",
+    dxString : 'SAU',
+    ex : sauEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}
+
+const tinu = {
+    disList : tinuList,
+    rules : [tinuRule_1,tinuRule_2],
+    dxName : "Tubulointerstitial Nephritis with Uveitis",
+    dxString : 'TINU',
+    ex : tinuEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}
+
+/*const saau = {
+    disList : cmvauList,
+    rules : [cmvauRule_1,cmvauRule_2],
+    dxName : "Cytomegalovirus Anterior Uveitis",
+    dxString : 'CMVAU',
+    ex : cmvauEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}
+
+const syau = {
+    disList : cmvauList,
+    rules : [cmvauRule_1,cmvauRule_2],
+    dxName : "Cytomegalovirus Anterior Uveitis",
+    dxString : 'CMVAU',
+    ex : cmvauEx,
+    inResult : [],
+    outResult : [],
+    checkResult : [],
+    ruleIn : function() {
+        ruleIn(this.disList,this,this.inResult);
+    },
+    ruleOut : function() {
+        ruleOut(this.disList,cmvau,cmvau.outResult);
+    },
+    ruleCheck : function() {
+        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+    }
+}*/
 
 function ruleIn(disList,dis,inResult){
     if(dis.rules){
@@ -303,33 +464,16 @@ function ruleCheck(disList,dis,checkResult){
     }
 }
 
-const antList = [cmvau]; 
+const antList = [cmvau,hsau,vzvau,fus,jiacau,sau,tinu]; 
 
-function diagnosis(){
-    const dx = JSON.parse(sessionStorage.dxList);
-    for(let i = 0; i < dx.length; i++){
-        for(let j = 0; j < antList.length; j++){
-            if(antList[j].dxString==dx[i]){
-                antList[j].ruleIn();
-                antList[j].ruleOut();
-                antList[j].ruleCheck();
-                document.getElementById('ruleIn-el').innerHTML = joinText(antList[j].inResult,"<br>");
-                document.getElementById('ruleOut-el').innerHTML = joinText(antList[j].outResult,"<br>");
-                document.getElementById('ruleCheck-el').innerHTML = joinText(antList[j].checkResult,"<br>");
-                document.getElementById('diagnosis-el').innerHTML = antList[j].dxName;
-                document.getElementById('exclusion-el').innerHTML = antList[j].ex;
-            }
-        }
-    }
+
+for(let i = 0; i< antList.length; i++){
+    antList[i].ruleIn();
+    antList[i].ruleOut();
+    antList[i].ruleCheck();
 }
-
-//diagnosis();
-
-antList[0].ruleIn();
-antList[0].ruleOut();
-antList[0].ruleCheck();
-document.getElementById('ruleIn-el').innerHTML = joinText(antList[0].inResult,"<br>");
-document.getElementById('ruleOut-el').innerHTML = joinText(antList[0].outResult,"<br>");
-document.getElementById('ruleCheck-el').innerHTML = joinText(antList[0].checkResult,"<br>");
+//document.getElementById('ruleIn-el').innerHTML = joinText(antList[0].inResult,"<br>");
+//document.getElementById('ruleOut-el').innerHTML = joinText(antList[0].outResult,"<br>");
+//document.getElementById('ruleCheck-el').innerHTML = joinText(antList[0].checkResult,"<br>");
 
 
