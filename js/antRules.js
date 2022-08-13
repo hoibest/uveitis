@@ -42,6 +42,7 @@ const cmvauRule_2 = {
 }
 
 const hsauRule_1 = {
+    ruleName : "hsau #1",
     rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation
@@ -55,6 +56,7 @@ const hsauRule_1 = {
 
 
 const hsauRule_2 = {
+    ruleName : "hsau #2",
     rule : `<span style="font-weight: 500;">Unilateral uveitis (unless there is a positive aqueous PCR for herpes simplex virus)</span><br>`,
     variableNames: ['Laterality','PCR HSV(+)'],
     variableValues: [LATERALITY,POS_PCR_CMV],
@@ -64,6 +66,7 @@ const hsauRule_2 = {
 }
 
 const hsauRule_3 = {
+    ruleName : "hsau #3",
     rule : `<span style="font-weight: 500;">Evidence of herpes simplex infection in the eye</span>
     <ol type="a"><li>aqueous humor PCR positive for herpes simplex virus OR
     <li> sectoral iris atrophy in a patient ≤ 50 years of age OR
@@ -76,6 +79,7 @@ const hsauRule_3 = {
 }
 
 const vzvauRule_1 = {
+    ruleName : "vzvau #1",
     rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation
@@ -88,6 +92,7 @@ const vzvauRule_1 = {
 }
 
 const vzvauRule_2 = {
+    ruleName : "vzvau #2",
     rule : `<span style="font-weight: 500;">Unilateral uveitis (unless there is a positive aqueous PCR for varicella zoster virus)</span><br>`,
     variableNames: ['Laterality','PCR VZV(+)'],
     variableValues: [LATERALITY,POS_PCR_VZV],
@@ -97,6 +102,7 @@ const vzvauRule_2 = {
 }
 
 const vzvauRule_3 = {
+    ruleName : "vzvau #3",
     rule : `<span style="font-weight: 500;">Evidence of varicella zoster virus infection in the eye</span>
     <ol type="a"><li>aqueous humor PCR positive for varicella zoster virus OR
     <li> sectoral iris atrophy in a patient ≥ 60 years of age OR
@@ -109,6 +115,7 @@ const vzvauRule_3 = {
 }
 
 const fusRule_1 = {
+    ruleName : "fus #1",
     rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if vitreous cells are present, anterior chamber inflammation also should be present
@@ -121,6 +128,7 @@ const fusRule_1 = {
 }
 
 const fusRule_2 = {
+    ruleName : "fus #2",
     rule : `<span style="font-weight: 500;">Unilateral uveitis</span><br>`,
     variableNames: ['Laterality'],
     variableValues: [LATERALITY],
@@ -130,6 +138,7 @@ const fusRule_2 = {
 }
 
 const fusRule_3 = {
+    ruleName : "fus #3",
     rule : `<span style="font-weight: 500;">Evidence of Fuchs uveitis syndrome</span>
     <ol type="a"><li> heterochromia OR
     <li> unilateral diffuse iris atrophy AND stellate keratic precipitates</ol>`,
@@ -141,6 +150,7 @@ const fusRule_3 = {
 }
 
 const fusRule_4 = {
+    ruleName : "fus #4",
     rule : `<span style="font-weight: 500;">Neither endotheliitis nor nodular, coin-shaped endothelial lesions</span><br>`,
     variableNames: ['Endotheliitis',`Endothelial Lesions`],
     variableValues: [ENDOTHELIITIS,ENDO_LESIONS],
@@ -150,6 +160,7 @@ const fusRule_4 = {
 }
 
 const jiacauRule_1 = {
+    ruleName : "jiacau #1",
     rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation</ol>`,
@@ -161,6 +172,7 @@ const jiacauRule_1 = {
 }
 
 const jiacauRule_2 = {
+    ruleName : "jiacau #2",
     rule : `<span style="font-weight: 500;">Chronic anterior uveitis or, if at initial diagnosis, uveitis is of insidious onset and asymptomatic/ minimally symptomatic</span><br>`,
     variableNames: ['Course',`Initial diagnosis`,`Onset`,`asymptomatic/mimimally symptomatic`],
     variableValues: [COURSE,FIRST_DIAGNOSIS,ONSET,SYMPTOMATIC],
@@ -170,6 +182,7 @@ const jiacauRule_2 = {
 }
 
 const jiacauRule_3 = {
+    ruleName : "jiacau #3",
     rule : `<span style="font-weight: 500;">Juvenile idiopathic arthritis of the following subtypes</span>
     <ol type="a"><li>Oligoarthritis, persistent or extended OR
     <li>Rheumatoid factor negative polyarthritis OR
@@ -182,6 +195,7 @@ const jiacauRule_3 = {
 }
 
 const sauRule_1 = {
+    ruleName : "sau #1",
     rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation</ol>`,
@@ -193,6 +207,7 @@ const sauRule_1 = {
 }
 
 const sauRule_2 = {
+    ruleName : "sau #2",
     rule : `<span style="font-weight: 500;">Characteristic uveitis course</span>
     <ol type="a"><li> Acute or recurrent acute, unilateral or unilateral alternating course OR
     <li> Chronic course with a history of a recurrent acute, unilateral or unilateral alternating course evolving into chronic course</ol>`,
@@ -204,6 +219,7 @@ const sauRule_2 = {
 }
 
 const sauRule_3 = {
+    ruleName : "sau #3",
     rule : `<span style="font-weight: 500;">ASAS-defined spondyloarthritis (axial or peripheral) and/or HLA-B27-positive</span>`,
     variableNames: [`ASAS-defined spondyloarthritis`,`HLA-B27(+)`],
     variableValues: [SPONDYLO_ARTH,POS_HLA_B27],
@@ -213,6 +229,7 @@ const sauRule_3 = {
 }
 
 const sauRule_4 = {
+    ruleName : "sau #4",
     rule : `<span style="font-weight: 500;">Chronic uveitis with both ASAS-defined spondyloarthritis (axial and peripheral) AND HLA-B27-positive</span>`,
     variableNames: [`Course`,`ASAS-defined spondyloarthritis`,`HLA-B27(+)`],
     variableValues: [COURSE,SPONDYLO_ARTH,POS_HLA_B27],
@@ -222,6 +239,7 @@ const sauRule_4 = {
 }
 
 const tinuRule_1 = {
+    ruleName : "tinu #1",
     rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
     <ol type="a"><li> anterior chamber cells
     <li> if vitritis or choroiditis or retinal vascular changes are present, anterior chamber inflammation also should be present </ol>`,
@@ -233,6 +251,7 @@ const tinuRule_1 = {
 }
 
 const tinuRule_2 = {
+    ruleName : "tinu #2",
     rule : `<span style="font-weight: 500;">Evidence of tubulointerstitial nephritis, either</span>
     <ol type="a"><li>Positive renal biopsy OR
     <li> Elevated urine β-microglobulin and either abnormal urine analysis or elevated serum creatinine </ol>`,
@@ -258,10 +277,10 @@ const cmvau = {
         ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(this.disList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,this,this.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,this,this.checkResult);
     }
 }
 
@@ -278,10 +297,10 @@ const hsau = {
         ruleIn(this.disList,this,this.inResult);
     },
     ruleOut : function() {
-        ruleOut(this.disList,cmvau,cmvau.outResult);
+        ruleOut(this.disList,this,this.outResult);
     },
     ruleCheck : function() {
-        ruleCheck(this.disList,cmvau,cmvau.checkResult);
+        ruleCheck(this.disList,this,this.checkResult);
     }
 }
 
@@ -472,8 +491,51 @@ for(let i = 0; i< antList.length; i++){
     antList[i].ruleOut();
     antList[i].ruleCheck();
 }
+
 //document.getElementById('ruleIn-el').innerHTML = joinText(antList[0].inResult,"<br>");
 //document.getElementById('ruleOut-el').innerHTML = joinText(antList[0].outResult,"<br>");
 //document.getElementById('ruleCheck-el').innerHTML = joinText(antList[0].checkResult,"<br>");
 
 
+if(document.getElementById('ruleIn-el')&&!document.getElementById('ruleOut-el')&&!document.getElementById('ruleCheck-el')){
+    let d = getSavedData('disease');
+    for(let i = 0; i < antList.length; i++){
+        if(antList[i].dxName==d){
+            document.getElementById('diagnosis-el').innerHTML = antList[i].dxName;
+            document.getElementById('ruleIn-el').innerHTML = joinText(antList[i].inResult,"<br>");
+            document.getElementById('exclusion-el').innerHTML = antList[i].ex;
+        }
+    }
+}
+
+if(document.getElementById('ruleOut-el')&&!document.getElementById('ruleIn-el')&&!document.getElementById('ruleCheck-el')){
+    let d = getSavedData('disease');
+    for(let i = 0; i < antList.length; i++){
+        if(antList[i].dxName==d){
+            document.getElementById('diagnosis-el').innerHTML = antList[i].dxName;
+            document.getElementById('ruleOut-el').innerHTML = joinText(antList[i].outResult,"<br>");
+        }
+    }
+}
+
+if(document.getElementById('ruleCheck-el')&&document.getElementById('ruleIn-el')&&document.getElementById('ruleOut-el')){
+    let d = getSavedData('disease');
+    for(let i = 0; i < antList.length; i++){
+        if(antList[i].dxName==d){
+            document.getElementById('diagnosis-el').innerHTML = antList[i].dxName;
+            if(antList[i].inResult.length!=0){
+                document.getElementById('ruleIn-el').innerHTML = joinText(antList[i].inResult,"<br>");
+            }
+            if(antList[i].outResult.length!=0){
+                document.getElementById('ruleOut-el').innerHTML = joinText(antList[i].outResult,"<br>");
+            }
+            if(antList[i].checkResult.length!=0){
+                document.getElementById('ruleCheck-el').innerHTML = joinText(antList[i].checkResult,"<br>");
+            }    
+        }
+    }
+}
+
+function passDiseaseName(v){
+    sessionStorage.setItem(`disease`,v)
+}

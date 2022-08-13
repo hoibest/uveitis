@@ -1,3 +1,5 @@
+//////////////////////////////////////////////////////////////////////////////
+
 let dxText = [];
 let exText = [];
 let possText = [];
@@ -6,7 +8,7 @@ let possText = [];
 for(let i = 0; i < antList.length; i++){
     for(let j = 0; j < possList.length; j++){
         if(antList[i].dxString==possList[j]){
-            possText.push(`<a class="p-path" href=""><div class=p-item>${antList[i].dxName}</div></a>`);
+            possText.push(`<a class="p-path" href="../HTML_result_page/possResult.html"><div onclick="passDiseaseName(this.innerText)" class=p-item>${antList[i].dxName}</div></a>`);
         }
     }
 }
@@ -18,7 +20,7 @@ if(possText.length==0){
 for(let i = 0; i < antList.length; i++){
     for(let j = 0; j < dxList.length; j++){
         if(antList[i].dxString==dxList[j]){
-            dxText.push(`<a class="c-path" href=""><div class=c-item>${antList[i].dxName}</div></a>`);
+            dxText.push(`<a class="c-path" href="../HTML_result_page/dxResult.html"><div onclick="passDiseaseName(this.innerText)" class=c-item>${antList[i].dxName}</div></a>`);
         }
     }
 }
@@ -31,7 +33,7 @@ if(dxText.length==0){
 for(let i = 0; i < antList.length; i++){
     for(let j = 0; j < exList.length; j++){
         if(antList[i].dxString==exList[j]){
-            exText.push(`<a class="e-path" href=""><div class=e-item>${antList[i].dxName}</div></a>`);
+            exText.push(`<a class="e-path" href="../HTML_result_page/exResult.html"><div onclick="passDiseaseName(this.innerText)" class=e-item>${antList[i].dxName}</div></a>`);
         }
     }
 }
@@ -46,3 +48,7 @@ let possHTML = joinText(possText,"");
 document.getElementById('c-uveitides').innerHTML = dxHTML;
 document.getElementById('p-uveitides').innerHTML = possHTML;
 document.getElementById('e-uveitides').innerHTML = exHTML;
+
+
+////////////////////////////////////////////////////////////////
+
