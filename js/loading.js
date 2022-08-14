@@ -34,4 +34,9 @@ function design(num){
     document.getElementById('nav-greenbar').style.width = num*10 + "%"; 
 }
 
+function navTextContent(title,numPage,totPage){
+    let fr = ''+numPage+'/'+totPage;
+    document.getElementById('nav-text-content').textContent = fr + " " + title;
+}
+
 
