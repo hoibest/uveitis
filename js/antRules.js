@@ -19,10 +19,7 @@ function joinText(arr,slice){
 
 const cmvauRule_1 = {
     ruleName : "cmvau #1",
-    rule : `<span class="haha" style="font-weight: 500;">Evidence of anterior uveitis</span>
-    <ol type="a"><li> anterior chamber cells
-    <li> if anterior vitreous cells are present, anterior chamber inflammation should be present
-    <li> no evidence of retinitis</ol>`,
+    rule : cmvauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`, `Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,RETINITIS],
     userInput : function(){
@@ -32,8 +29,7 @@ const cmvauRule_1 = {
 
 const cmvauRule_2 = {
     ruleName : "cmvau #2",
-    rule : `<span class="haha" style="font-weight: 500;">Evidence of cytomegalovirus infection in the eye</span>
-    <ol type="a"><li> positive PCR for cytomegalovirus on aqueous specimen</ol>`,
+    rule : cmvauRule_2_html,
     variableNames: [`PCR CMV(+)`],
     variableValues: [POS_PCR_CMV],
     userInput : function(){
@@ -43,10 +39,7 @@ const cmvauRule_2 = {
 
 const hsauRule_1 = {
     ruleName : "hsau #1",
-    rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
-    <ol type="a"><li> anterior chamber cells
-    <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation
-    <li> no evidence of retinitis</ol>`,
+    rule : hsauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`,`Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE,RETINITIS],
     userInput : function() {
@@ -57,7 +50,7 @@ const hsauRule_1 = {
 
 const hsauRule_2 = {
     ruleName : "hsau #2",
-    rule : `<span style="font-weight: 500;">Unilateral uveitis (unless there is a positive aqueous PCR for herpes simplex virus)</span><br>`,
+    rule : hsauRule_2_html,
     variableNames: ['Laterality','PCR HSV(+)'],
     variableValues: [LATERALITY,POS_PCR_CMV],
     userInput : function() {
@@ -67,10 +60,7 @@ const hsauRule_2 = {
 
 const hsauRule_3 = {
     ruleName : "hsau #3",
-    rule : `<span style="font-weight: 500;">Evidence of herpes simplex infection in the eye</span>
-    <ol type="a"><li>aqueous humor PCR positive for herpes simplex virus OR
-    <li> sectoral iris atrophy in a patient ≤ 50 years of age OR
-    <li> herpes simplex keratitis</ol>`,
+    rule : hsauRule_3_html,
     variableNames: [`PCR HSV(+)`,`Iris atrophy`,`Age`,`Keratitis`],
     variableValues: [POS_PCR_HSV,IRIS_ATROPHY,AGE,KERATITIS],
     userInput : function() {
@@ -80,10 +70,7 @@ const hsauRule_3 = {
 
 const vzvauRule_1 = {
     ruleName : "vzvau #1",
-    rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
-    <ol type="a"><li> anterior chamber cells
-    <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation
-    <li> no evidence of retinitis</ol>`,
+    rule :vzvauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`,`Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE,RETINITIS],
     userInput : function() {
@@ -93,7 +80,7 @@ const vzvauRule_1 = {
 
 const vzvauRule_2 = {
     ruleName : "vzvau #2",
-    rule : `<span style="font-weight: 500;">Unilateral uveitis (unless there is a positive aqueous PCR for varicella zoster virus)</span><br>`,
+    rule : vzvauRule_2_html,
     variableNames: ['Laterality','PCR VZV(+)'],
     variableValues: [LATERALITY,POS_PCR_VZV],
     userInput : function() {
@@ -103,10 +90,7 @@ const vzvauRule_2 = {
 
 const vzvauRule_3 = {
     ruleName : "vzvau #3",
-    rule : `<span style="font-weight: 500;">Evidence of varicella zoster virus infection in the eye</span>
-    <ol type="a"><li>aqueous humor PCR positive for varicella zoster virus OR
-    <li> sectoral iris atrophy in a patient ≥ 60 years of age OR
-    <li> concurrent or recent dermatomal Herpes zoster</ol>`,
+    rule :vzvauRule_3_html,
     variableNames: [`PCR VZV(+)`,`Iris atrophy`,`Age`,`Dermatomal herpes zoster`],
     variableValues: [POS_PCR_VZV,IRIS_ATROPHY,AGE,DERM_HZ],
     userInput : function() {
@@ -116,10 +100,7 @@ const vzvauRule_3 = {
 
 const fusRule_1 = {
     ruleName : "fus #1",
-    rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
-    <ol type="a"><li> anterior chamber cells
-    <li> if vitreous cells are present, anterior chamber inflammation also should be present
-    <li> no evidence of active retinitis</ol>`,
+    rule : fusRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,RETINITIS],
     userInput : function() {
@@ -129,7 +110,7 @@ const fusRule_1 = {
 
 const fusRule_2 = {
     ruleName : "fus #2",
-    rule : `<span style="font-weight: 500;">Unilateral uveitis</span><br>`,
+    rule : fusRule_2_html,
     variableNames: ['Laterality'],
     variableValues: [LATERALITY],
     userInput : function() {
@@ -139,9 +120,7 @@ const fusRule_2 = {
 
 const fusRule_3 = {
     ruleName : "fus #3",
-    rule : `<span style="font-weight: 500;">Evidence of Fuchs uveitis syndrome</span>
-    <ol type="a"><li> heterochromia OR
-    <li> unilateral diffuse iris atrophy AND stellate keratic precipitates</ol>`,
+    rule : fusRule_3_html,
     variableNames: [`Heterochromia`,`Iris atrophy`,`Keratic precipitates`,],
     variableValues: [HETEROCHROMIA,IRIS_ATROPHY,KP],
     userInput : function() {
@@ -151,7 +130,7 @@ const fusRule_3 = {
 
 const fusRule_4 = {
     ruleName : "fus #4",
-    rule : `<span style="font-weight: 500;">Neither endotheliitis nor nodular, coin-shaped endothelial lesions</span><br>`,
+    rule : fusRule_4_html,
     variableNames: ['Endotheliitis',`Endothelial Lesions`],
     variableValues: [ENDOTHELIITIS,ENDO_LESIONS],
     userInput : function() {
@@ -161,9 +140,7 @@ const fusRule_4 = {
 
 const jiacauRule_1 = {
     ruleName : "jiacau #1",
-    rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
-    <ol type="a"><li> anterior chamber cells
-    <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation</ol>`,
+    rule : jiacauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE],
     userInput : function() {
@@ -173,7 +150,7 @@ const jiacauRule_1 = {
 
 const jiacauRule_2 = {
     ruleName : "jiacau #2",
-    rule : `<span style="font-weight: 500;">Chronic anterior uveitis or, if at initial diagnosis, uveitis is of insidious onset and asymptomatic/ minimally symptomatic</span><br>`,
+    rule : jiacauRule_2_html,
     variableNames: ['Course',`Initial diagnosis`,`Onset`,`asymptomatic/mimimally symptomatic`],
     variableValues: [COURSE,FIRST_DIAGNOSIS,ONSET,SYMPTOMATIC],
     userInput : function() {
@@ -183,10 +160,7 @@ const jiacauRule_2 = {
 
 const jiacauRule_3 = {
     ruleName : "jiacau #3",
-    rule : `<span style="font-weight: 500;">Juvenile idiopathic arthritis of the following subtypes</span>
-    <ol type="a"><li>Oligoarthritis, persistent or extended OR
-    <li>Rheumatoid factor negative polyarthritis OR
-    <li>Juvenile psoriatic arthritis, other than psoriatic spondylitis</ol>`,
+    rule : jiacauRule_3_html,
     variableNames: [`Oligoarthritis`,`RF-negative polyarthritis`,`Juvenile psoriatic arthritis`],
     variableValues: [OLIGO_ARTH,RF_NEG_POLY_ARTH,JUV_PSOR_ARTH],
     userInput : function() {
@@ -196,9 +170,7 @@ const jiacauRule_3 = {
 
 const sauRule_1 = {
     ruleName : "sau #1",
-    rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
-    <ol type="a"><li> anterior chamber cells
-    <li> if anterior vitreous cells are present, severity is less than anterior chamber inflammation</ol>`,
+    rule : sauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE],
     userInput : function() {
@@ -208,9 +180,7 @@ const sauRule_1 = {
 
 const sauRule_2 = {
     ruleName : "sau #2",
-    rule : `<span style="font-weight: 500;">Characteristic uveitis course</span>
-    <ol type="a"><li> Acute or recurrent acute, unilateral or unilateral alternating course OR
-    <li> Chronic course with a history of a recurrent acute, unilateral or unilateral alternating course evolving into chronic course</ol>`,
+    rule : sauRule_2_html,
     variableNames: [`Course`,`Laterality`],
     variableValues: [COURSE,LATERALITY],
     userInput : function() {
@@ -220,7 +190,7 @@ const sauRule_2 = {
 
 const sauRule_3 = {
     ruleName : "sau #3",
-    rule : `<span style="font-weight: 500;">ASAS-defined spondyloarthritis (axial or peripheral) and/or HLA-B27-positive</span>`,
+    rule : sauRule_3_html,
     variableNames: [`ASAS-defined spondyloarthritis`,`HLA-B27(+)`],
     variableValues: [SPONDYLO_ARTH,POS_HLA_B27],
     userInput : function() {
@@ -230,7 +200,7 @@ const sauRule_3 = {
 
 const sauRule_4 = {
     ruleName : "sau #4",
-    rule : `<span style="font-weight: 500;">Chronic uveitis with both ASAS-defined spondyloarthritis (axial and peripheral) AND HLA-B27-positive</span>`,
+    rule : sauRule_4_html,
     variableNames: [`Course`,`ASAS-defined spondyloarthritis`,`HLA-B27(+)`],
     variableValues: [COURSE,SPONDYLO_ARTH,POS_HLA_B27],
     userInput : function() {
@@ -240,9 +210,7 @@ const sauRule_4 = {
 
 const tinuRule_1 = {
     ruleName : "tinu #1",
-    rule : `<span style="font-weight: 500;">Evidence of anterior uveitis</span>
-    <ol type="a"><li> anterior chamber cells
-    <li> if vitritis or choroiditis or retinal vascular changes are present, anterior chamber inflammation also should be present </ol>`,
+    rule : tinuRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitritis`,`Choroiditis`,`Anterior chamber inflammation`],
     variableValues: [ANT_CHAMBER_CELLS,VITRITIS,CHOROIDITIS,ANT_CHAMBER_FLARE],
     userInput : function() {
@@ -252,9 +220,7 @@ const tinuRule_1 = {
 
 const tinuRule_2 = {
     ruleName : "tinu #2",
-    rule : `<span style="font-weight: 500;">Evidence of tubulointerstitial nephritis, either</span>
-    <ol type="a"><li>Positive renal biopsy OR
-    <li> Elevated urine β-microglobulin and either abnormal urine analysis or elevated serum creatinine </ol>`,
+    rule : tinuRule_2_html,
     variableNames: [`Renal biopsy(+)`,`Elevated urine β-microglobulin`,`Abnormal urine analysis`,`Elevated serum creatinine`],
     variableValues: [POS_RENAL_BIOPSY,EL_URINE_BM,AB_URINE_AN,EL_SERUM_CR],
     userInput : function() {

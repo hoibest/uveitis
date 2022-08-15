@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="initial-scale=1.0, width=device-width" name="viewport">
+        <meta name="theme-color" content="#e64626">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/result.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                Classification
+            </div>
+        </header>
+        <div class="nav">
+            <div class="nav-content-wrapper">
+                <div class="nav-text-content">
+                    Classified Uveitis
+                </div>
+                <div class="nav-bar-content">
+                    <div class="nav-greenbar" id="nav-greenbar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="result-container">
+            <div class="result-title">
+                <div class="result-subtitle">Classification Criteria</div>
+                <div class="result-maintitle">Herpes Simplex Anterior Uveitis</div>
+            </div>
+            <div class="result-box">
+                <div class="result-box-title">Criteria</div>
+                <div class="result-box-contents" id="classificationRules">
+                    N/A
+                </div>
+            </div>
+            <div class="result-box">
+                <div class="result-box-title">Exclusion</div>
+                <div class="result-box-contents" id="exclusion-el">
+                    N/A
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="../anteriorUveitides.html"><div class="go-back">Back</div></a>
+        </div>
+        <footer>
+            <div class="footer-content">
+                © Developing Uveitis Classification Application
+            </div>
+        </footer>
+        <script src="../js/exclusion.js"></script>
+        <script src="../js/antCriteria.js"></script>
+        <script>
+            let rule = joinText([hsauRule_1_html,hsauRule_2_html,hsauRule_3_html],"<br>")
+            document.getElementById("classificationRules").innerHTML = rule;
+            document.getElementById("exclusion-el").innerHTML = hsauEx;
+        </script>
+    </body>
+</html>
