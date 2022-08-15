@@ -31,7 +31,11 @@ function getSavedData(id){
 }
 
 function design(num){
-    document.getElementById('nav-greenbar').style.width = num*10 + "%"; 
+    const tot = 5;
+    document.getElementById('nav-greenbar').style.width = num*20 + "%"; 
+    if(num==tot){
+        document.getElementById('nav-greenbar').style.borderRadius = 10+'px';
+    }
 }
 
 function navTextContent(title,numPage,totPage){

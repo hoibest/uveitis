@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/diagnosis.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -16,7 +16,7 @@
         </header>
         <div class="nav">
             <div class="nav-content-wrapper">
-                <div class="nav-text-content">
+                <div class="nav-text-content" id="nav-text-content">
                     1/X History
                 </div>
                 <div class="nav-bar-content">
@@ -38,10 +38,10 @@
                     <div class="input">
                         <select id="age-el" onchange="keepData(this)"> 
                             <option value="">Select</option>                   
-                            <option value="lower16">≤16</option>
-                            <option value="bw17and50">17-50</option>
-                            <option value="bw51and59">51-59</option>
-                            <option value="higher60">≥60</option>
+                            <option value="≤16">≤16</option>
+                            <option value="17-50">17-50</option>
+                            <option value="51-59">51-59</option>
+                            <option value="≥60">≥60</option>
                             <option value="Don't know">Don't know</option>
                         </select>
                     </div>
@@ -88,8 +88,8 @@
                     <div class="input">
                         <select id="course-el" onchange="keepData(this)">                    
                             <option value="">Select</option>
-                            <option value="acuteMonophasic">Acute, monophasic</option>
-                            <option value="acuteRecurrent">Acute, recurrent</option>
+                            <option value="acute, monophasic">Acute, monophasic</option>
+                            <option value="acute, recurrent">Acute, recurrent</option>
                             <option value="chronic">Chronic</option>
                             <option value="Don't know">Don't know</option>
                         </select>
@@ -101,8 +101,8 @@
                     <div class="input">
                         <select id="laterality-el" onchange="keepData(this)">
                             <option value="">Select</option>
-                            <option value="monoUnilateral">Unilateral</option>
-                            <option value="unilateralAlternating">Unilateral, alternating</option>
+                            <option value='unilateral'>Unilateral</option>
+                            <option value='unilateral, alternating'>Unilateral, alternating</option>
                             <option value="bilateral">Bilateral</option>
                             <option value="Don't know">Don't know</option>
                         </select>
@@ -131,6 +131,7 @@
             let idList = ['age-el','firstDiagnosis-el','symptomatic-el','onset-el','course-el','laterality-el']
             loadData(idList);
             design(1);
+            navTextContent(`History`,1,5);
         </script>
     </body>
 </html>

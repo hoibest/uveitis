@@ -17,10 +17,10 @@
         <div class="nav">
             <div class="nav-content-wrapper">
                 <div class="nav-text-content">
-                    1/7 History
+                    Excluded Uveitis
                 </div>
                 <div class="nav-bar-content">
-                    <div class="nav-greenbar"></div>
+                    <div class="nav-greenbar" id="nav-greenbar"></div>
                 </div>
             </div>
         </div>
@@ -47,11 +47,11 @@
         </footer>
         <script src="../js/exclusion.js"></script>
         <script src="../js/patient.js"></script>
-        
         <script>
             patient.patientUpdate();
+            document.getElementById('nav-greenbar').style.width = 100 + "%"; 
+            document.getElementById('nav-greenbar').style.borderRadius = 10+'px';
         </script>
         <script src="../js/terms.js"></script>
-        <script src="../js/antRules.js"></script>
         <script src="../js/antRules.js"></script>
 </html>

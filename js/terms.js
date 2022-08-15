@@ -191,7 +191,7 @@ function hsauRuleTwo(){
         a = TRUE;
     }
     else{
-        a = is(LATERALITY,"monoUnilateral");
+        a = is(LATERALITY,"unilateral");
     }
     if(a==FALSE){disList.outList.push(rule)}
     else if(a==TRUE){disList.inList.push(rule)}
@@ -204,7 +204,7 @@ function hsauRuleThree(){
     let a = IDK; let b = IDK; let c = IDK;
     a = is(POS_PCR_HSV,"yes");
     if(IRIS_ATROPHY=='sectoral'){
-        if(AGE=='lower16' || AGE=='bw17and50'){
+        if(AGE=="≤16" || AGE=="17-50"){
             b = TRUE;
         }
         else if(AGE==`Don't know`){
@@ -287,7 +287,7 @@ function vzvauRuleTwo(){
         a = TRUE;
     }
     else{
-        a = is(LATERALITY,"monoUnilateral");
+        a = is(LATERALITY,"unilateral");
     }
     if(a==FALSE){disList.outList.push(rule)}
     else if(a==TRUE){disList.inList.push(rule)}
@@ -300,7 +300,7 @@ function vzvauRuleThree(){
     let a = IDK; let b = IDK; let c = IDK;
     a = is(POS_PCR_VZV,"yes");
     if(IRIS_ATROPHY=='sectoral'){
-        if(AGE=='higher60'){
+        if(AGE=='≥60'){
             b = TRUE;
         }
         else if(AGE==dk){
@@ -377,7 +377,7 @@ function fusRuleTwo(){
     let rule = 'fus #2';
     let disList = fusList;
     let a = IDK;
-    a = is(LATERALITY,"monoUnilateral");
+    a = is(LATERALITY,"unilateral");
     if(a==FALSE){disList.outList.push(rule);}
     else if(a==TRUE){disList.inList.push(rule);}
     else{disList.checkList.push(rule);}
@@ -392,7 +392,7 @@ function fusRuleThree(){
         if(KP=='stellate'){
             b = TRUE;
         }
-        else if(KP=='idk'){
+        else if(KP==dk){
             b = IDK;
         }
         else{
@@ -481,11 +481,28 @@ function jiacauRuleOne(){
 function jiacauRuleTwo(){
     let rule = 'jiacau #2';
     let disList = jiacauList;
-    let a = IDK;
+    let a = IDK; let b = IDK;
 
     a = is(COURSE,'chronic');
-    if(a==FALSE){disList.outList.push(rule)}
-    else if(a==TRUE){disList.inList.push(rule)}
+    if(FIRST_DIAGNOSIS=='yes'){
+        if(ONSET!='insidious'||SYMPTOMATIC!='yes'){
+            b = FALSE;
+        }
+        else if(ONSET=='insidious'&&SYMPTOMATIC=='yes'){
+            b = TRUE;
+        }
+        else{
+            b = IDK;
+        }
+    }
+    else if(FIRST_DIAGNOSIS=='no'){
+        b = FALSE;
+    }
+    else{
+        b = IDK;
+    }
+    if(a==FALSE&&b==FALSE){disList.outList.push(rule)}
+    else if(a==TRUE||b==TRUE){disList.inList.push(rule)}
     else{disList.checkList.push(rule)}
 }
 
@@ -558,8 +575,8 @@ function sauRuleTwo(){
     let rule = 'sau #2'
     let disList = sauList;
     let a = IDK; let b = IDK;
-    if(COURSE=='acuteMonophasic'||COURSE=='acuteRecurrent'){
-        if(LATERALITY=='monoUnilateral'||LATERALITY=='unilateralAlternating'){
+    if(COURSE=="acute, monophasic"||COURSE=='acute, recurrent'){
+        if(LATERALITY=='unilateral'||LATERALITY=='unilateral, alternating'){
             a = TRUE;
         }
         else if(LATERALITY==dk){
@@ -577,7 +594,7 @@ function sauRuleTwo(){
     }
 
     if(COURSE=='chronic'){
-        if(LATERALITY=='monoUnilateral'||LATERALITY=='unilateralAlternating'){
+        if(LATERALITY=='unilateral'||LATERALITY=='unilateral, alternating'){
             b = TRUE;
         }
         else if(LATERALITY==dk){

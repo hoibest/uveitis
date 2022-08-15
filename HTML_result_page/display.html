@@ -17,10 +17,10 @@
         <div class="nav">
             <div class="nav-content-wrapper">
                 <div class="nav-text-content">
-                    1/7 History
+                    Result
                 </div>
                 <div class="nav-bar-content">
-                    <div class="nav-greenbar"></div>
+                    <div class="nav-greenbar" id="nav-greenbar"></div>
                 </div>
             </div>
         </div>
@@ -56,6 +56,8 @@
         <script>
             patient.patientUpdate();
             sessionStorage.setItem('disease',"");
+            document.getElementById('nav-greenbar').style.width = 100 + "%"; 
+            document.getElementById('nav-greenbar').style.borderRadius = 10+'px';
         </script>
         <script src="../js/terms.js"></script>
         <script src="../js/antRules.js"></script>
