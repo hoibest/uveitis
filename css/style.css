@@ -21,12 +21,13 @@ header{
     width: fit-content;
 }
 
+
 .header-content > div > a {
     text-decoration: none;
 }
 
 .header-content > div > a:visited {
-    color: #E2E2E2;
+    color: none;
 }
 
 .nav{
