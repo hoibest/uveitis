@@ -27,7 +27,7 @@ header{
 }
 
 .header-content > div > a:visited {
-    color: none;
+    color: white;
 }
 
 .nav{
