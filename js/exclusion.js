@@ -145,7 +145,7 @@ const sauRule_3_html =
 
 const sauRule_4_html = 
 `<span class='rule-number'>Rule #4 <br></span>
-<span style="font-weight: 500;">Chronic uveitis with both ASAS-defined spondyloarthritis (axial and peripheral) AND HLA-B27-positive</span>`;
+<span style="font-weight: 500;">Chronic uveitis with both ASAS-defined spondyloarthritis (axial and peripheral) AND HLA-B27-positive</span><br>`;
 
 const tinuRule_1_html = 
 `<span class='rule-number'>Rule #1 <br></span>
