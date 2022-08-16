@@ -53,7 +53,8 @@
         <script src="../js/exclusion.js"></script>
         <script src="../js/antCriteria.js"></script>
         <script>
-            let rule = joinText([tinuRule_1_html,tinuRule_2_html],"<br>")
+            let rule = joinText(["<span class='should-satisfy'>Should satisfy rule #1 AND #2</span><br>",
+                tinuRule_1_html,tinuRule_2_html],"<br>")
             document.getElementById("classificationRules").innerHTML = rule;
             document.getElementById("exclusion-el").innerHTML = tinuEx;
         </script>

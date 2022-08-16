@@ -53,7 +53,8 @@
         <script src="../js/exclusion.js"></script>
         <script src="../js/antCriteria.js"></script>
         <script>
-            let rule = joinText([sauRule_1_html,sauRule_2_html,sauRule_3_html,sauRule_4_html],"<br>")
+            let rule = joinText(["<span class='should-satisfy'>Should satisfy rule #1 AND either (both #2 and #3) OR #4</span><br>",
+                sauRule_1_html,sauRule_2_html,sauRule_3_html,sauRule_4_html],"<br>")
             document.getElementById("classificationRules").innerHTML = rule;
             document.getElementById("exclusion-el").innerHTML = sauEx;
         </script>

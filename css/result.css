@@ -78,3 +78,13 @@ ul { margin: 0; padding-left: 0rem; color: rgb(49, 45, 45);}
 .buttons {
     font-weight: 500;
 }
+
+.rule-number{
+    color: #FA5C5C;
+    font-weight: 500;
+}
+
+.should-satisfy{
+    
+    text-decoration: underline;
+}

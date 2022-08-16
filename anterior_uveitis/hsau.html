@@ -53,7 +53,8 @@
         <script src="../js/exclusion.js"></script>
         <script src="../js/antCriteria.js"></script>
         <script>
-            let rule = joinText([hsauRule_1_html,hsauRule_2_html,hsauRule_3_html],"<br>")
+            let rule = joinText(["<span class='should-satisfy'>Should satisfy rule #1 AND #2 AND #3</span><br>",
+                hsauRule_1_html,hsauRule_2_html,hsauRule_3_html],"<br>")
             document.getElementById("classificationRules").innerHTML = rule;
             document.getElementById("exclusion-el").innerHTML = hsauEx;
         </script>

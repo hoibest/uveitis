@@ -53,7 +53,8 @@
         <script src="../js/exclusion.js"></script>
         <script src="../js/antCriteria.js"></script>
         <script>
-            let rule = joinText([fusRule_1_html,fusRule_2_html,fusRule_3_html,fusRule_4_html],"<br>")
+            let rule = joinText(["<span class='should-satisfy'>Should satisfy rule #1 AND #2 AND #3 AND #4</span><br>",
+                fusRule_1_html,fusRule_2_html,fusRule_3_html,fusRule_4_html],"<br>")
             document.getElementById("classificationRules").innerHTML = rule;
             document.getElementById("exclusion-el").innerHTML = fusEx;
         </script>

@@ -53,7 +53,7 @@
         <script src="../js/exclusion.js"></script>
         <script src="../js/antCriteria.js"></script>
         <script>
-            let rule = joinText([cmvauRule_1_html,cmvauRule_2_html],"<br>")
+            let rule = joinText(["<span class='should-satisfy'>Should satisfy rule #1 AND #2</span><br>",cmvauRule_1_html,cmvauRule_2_html],"<br>")
             document.getElementById("classificationRules").innerHTML = rule;
             document.getElementById("exclusion-el").innerHTML = cmvauEx;
         </script>

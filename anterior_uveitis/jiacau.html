@@ -53,7 +53,8 @@
         <script src="../js/exclusion.js"></script>
         <script src="../js/antCriteria.js"></script>
         <script>
-            let rule = joinText([jiacauRule_1_html,jiacauRule_2_html,jiacauRule_3_html],"<br>")
+            let rule = joinText(["<span class='should-satisfy'>Should satisfy rule #1 AND #2 AND #3</span><br>",
+                jiacauRule_1_html,jiacauRule_2_html,jiacauRule_3_html],"<br>")
             document.getElementById("classificationRules").innerHTML = rule;
             document.getElementById("exclusion-el").innerHTML = jiacauEx;
         </script>
