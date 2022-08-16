@@ -236,9 +236,9 @@ const sauRule_4 = {
 const tinuRule_1 = {
     ruleName : "tinu #1",
     rule : tinuRule_1_html,
-    variableNames: [`Anterior chamber cells`,`Vitritis`,`Choroiditis`,`Anterior chamber inflammation`],
-    variableValues: [ANT_CHAMBER_CELLS,VITRITIS,CHOROIDITIS,ANT_CHAMBER_FLARE],
-    href:[html_2,html_3,html_3,html_2],
+    variableNames: [`Anterior chamber cells`,`Vitritis`,`Choroiditis`,`Retinal Vascular Change`,`Anterior chamber inflammation`],
+    variableValues: [ANT_CHAMBER_CELLS,VITRITIS,CHOROIDITIS,RET_VAS_CHANGES,ANT_CHAMBER_FLARE],
+    href:[html_2,html_3,html_3,html_3,html_2],
     userInput : function() {
         return inputText(this.variableNames,this.variableValues,this.href);
     }
