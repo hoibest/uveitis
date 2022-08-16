@@ -93,6 +93,15 @@ ul { margin: 0; padding-left: 0rem; color: rgb(49, 45, 45);}
 }
 
 .should-satisfy{
-    
     text-decoration: underline;
+}
+
+.your-input{
+    text-decoration: underline; 
+    text-decoration-style: dotted;
+    color: rgb(33, 30, 30);
+}
+
+.your-input:hover{
+    color: rgb(90, 89, 89);
 }

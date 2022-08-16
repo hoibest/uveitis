@@ -1,11 +1,11 @@
-function inputText(arr1,arr2){
+function inputText(arr1,arr2,href){
     if(arr1.length!=arr2.length){
         return;
     }
     let textArr = [];
     textArr.push(`<span style="font-weight:500;">User Input</span> <ul style="font-style: italic; font-size: 0.9rem;">`);
     for(let i = 0; i < arr1.length; i++){
-        let line = `<li>${arr1[i]}: <span style="color: blue;">${arr2[i]}</span>`
+        let line = `<li><a class="your-input" href=${href[i]}>${arr1[i]}</a>: <span style="color: blue;">${arr2[i]}</span>`
         textArr.push(line);
     }
     textArr.push(`</ul>`);
@@ -17,13 +17,20 @@ function joinText(arr,slice){
     return text;
 }
 
+const html_1 = "../diagnosis1.html";
+const html_2 = "../diagnosis2.html";
+const html_3 = "../diagnosis3.html";
+const html_4 = "../diagnosis4.html";
+const html_5 = "../diagnosis5.html";
+
 const cmvauRule_1 = {
     ruleName : "cmvau #1",
     rule : cmvauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`, `Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,RETINITIS],
+    href: [html_2,html_3,html_2,html_3],
     userInput : function(){
-        return inputText(this.variableNames, this.variableValues);
+        return inputText(this.variableNames, this.variableValues,this.href);
     }
 }
 
@@ -32,8 +39,9 @@ const cmvauRule_2 = {
     rule : cmvauRule_2_html,
     variableNames: [`PCR CMV(+)`],
     variableValues: [POS_PCR_CMV],
+    href: [html_5],
     userInput : function(){
-        return inputText(this.variableNames, this.variableValues);
+        return inputText(this.variableNames, this.variableValues,this.href);
     }
 }
 
@@ -42,8 +50,9 @@ const hsauRule_1 = {
     rule : hsauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`,`Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE,RETINITIS],
+    href: [html_2,html_3,html_2,html_3,html_3],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -53,8 +62,9 @@ const hsauRule_2 = {
     rule : hsauRule_2_html,
     variableNames: ['Laterality','PCR HSV(+)'],
     variableValues: [LATERALITY,POS_PCR_CMV],
+    href: [html_1,html_5],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues)
+        return inputText(this.variableNames,this.variableValues,this.href)
     }
 }
 
@@ -63,8 +73,9 @@ const hsauRule_3 = {
     rule : hsauRule_3_html,
     variableNames: [`PCR HSV(+)`,`Iris atrophy`,`Age`,`Keratitis`],
     variableValues: [POS_PCR_HSV,IRIS_ATROPHY,AGE,KERATITIS],
+    href: [html_5,html_2,html_1,html_2],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -73,8 +84,9 @@ const vzvauRule_1 = {
     rule :vzvauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`,`Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE,RETINITIS],
+    href: [html_2,html_3,html_2,html_3,html_3],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -83,8 +95,9 @@ const vzvauRule_2 = {
     rule : vzvauRule_2_html,
     variableNames: ['Laterality','PCR VZV(+)'],
     variableValues: [LATERALITY,POS_PCR_VZV],
+    href: [html_1,html_5],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues)
+        return inputText(this.variableNames,this.variableValues,this.href)
     }
 }
 
@@ -93,8 +106,9 @@ const vzvauRule_3 = {
     rule :vzvauRule_3_html,
     variableNames: [`PCR VZV(+)`,`Iris atrophy`,`Age`,`Dermatomal herpes zoster`],
     variableValues: [POS_PCR_VZV,IRIS_ATROPHY,AGE,DERM_HZ],
+    href: [html_5,html_2,html_1,html_4],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -103,8 +117,9 @@ const fusRule_1 = {
     rule : fusRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Retinitis`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,RETINITIS],
+    href: [html_2,html_3,html_2,html_3],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -113,8 +128,9 @@ const fusRule_2 = {
     rule : fusRule_2_html,
     variableNames: ['Laterality'],
     variableValues: [LATERALITY],
+    href: [html_1],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues)
+        return inputText(this.variableNames,this.variableValues,this.href)
     }
 }
 
@@ -123,8 +139,9 @@ const fusRule_3 = {
     rule : fusRule_3_html,
     variableNames: [`Heterochromia`,`Iris atrophy`,`Keratic precipitates`,],
     variableValues: [HETEROCHROMIA,IRIS_ATROPHY,KP],
+    href: [html_2,html_2,html_2],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -133,8 +150,9 @@ const fusRule_4 = {
     rule : fusRule_4_html,
     variableNames: ['Endotheliitis',`Endothelial Lesions`],
     variableValues: [ENDOTHELIITIS,ENDO_LESIONS],
+    href: [html_2,html_2],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues)
+        return inputText(this.variableNames,this.variableValues,this.href)
     }
 }
 
@@ -143,8 +161,9 @@ const jiacauRule_1 = {
     rule : jiacauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE],
+    href: [html_2,html_3,html_2,html_3],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -153,8 +172,9 @@ const jiacauRule_2 = {
     rule : jiacauRule_2_html,
     variableNames: ['Course',`Initial diagnosis`,`Onset`,`asymptomatic/mimimally symptomatic`],
     variableValues: [COURSE,FIRST_DIAGNOSIS,ONSET,SYMPTOMATIC],
+    href: [html_1,html_1,html_1,html_1],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues)
+        return inputText(this.variableNames,this.variableValues,this.href)
     }
 }
 
@@ -163,8 +183,9 @@ const jiacauRule_3 = {
     rule : jiacauRule_3_html,
     variableNames: [`Oligoarthritis`,`RF-negative polyarthritis`,`Juvenile psoriatic arthritis`],
     variableValues: [OLIGO_ARTH,RF_NEG_POLY_ARTH,JUV_PSOR_ARTH],
+    href: [html_4,html_4,html_4],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -173,8 +194,9 @@ const sauRule_1 = {
     rule : sauRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitreous cells`,`Anterior chamber inflammation`,`Vitreous haze`],
     variableValues: [ANT_CHAMBER_CELLS,VIT_CELLS,ANT_CHAMBER_FLARE,VIT_HAZE],
+    href: [html_2,html_3,html_2,html_3],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -183,8 +205,9 @@ const sauRule_2 = {
     rule : sauRule_2_html,
     variableNames: [`Course`,`Laterality`],
     variableValues: [COURSE,LATERALITY],
+    href: [html_1,html_1],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -193,8 +216,9 @@ const sauRule_3 = {
     rule : sauRule_3_html,
     variableNames: [`ASAS-defined spondyloarthritis`,`HLA-B27(+)`],
     variableValues: [SPONDYLO_ARTH,POS_HLA_B27],
+    href: [html_4,html_5],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -203,8 +227,9 @@ const sauRule_4 = {
     rule : sauRule_4_html,
     variableNames: [`Course`,`ASAS-defined spondyloarthritis`,`HLA-B27(+)`],
     variableValues: [COURSE,SPONDYLO_ARTH,POS_HLA_B27],
+    href: [html_1,html_4,html_5],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -213,8 +238,9 @@ const tinuRule_1 = {
     rule : tinuRule_1_html,
     variableNames: [`Anterior chamber cells`,`Vitritis`,`Choroiditis`,`Anterior chamber inflammation`],
     variableValues: [ANT_CHAMBER_CELLS,VITRITIS,CHOROIDITIS,ANT_CHAMBER_FLARE],
+    href:[html_2,html_3,html_3,html_2],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
@@ -223,8 +249,9 @@ const tinuRule_2 = {
     rule : tinuRule_2_html,
     variableNames: [`Renal biopsy(+)`,`Elevated urine β-microglobulin`,`Abnormal urine analysis`,`Elevated serum creatinine`],
     variableValues: [POS_RENAL_BIOPSY,EL_URINE_BM,AB_URINE_AN,EL_SERUM_CR],
+    href: [html_5,html_5,html_5,html_5],
     userInput : function() {
-        return inputText(this.variableNames,this.variableValues);
+        return inputText(this.variableNames,this.variableValues,this.href);
     }
 }
 
