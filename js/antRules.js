@@ -3,7 +3,7 @@ function inputText(arr1,arr2){
         return;
     }
     let textArr = [];
-    textArr.push(`<span style="font-weight:500;">Input</span> <ul style="font-style: italic; font-size: 0.9rem;">`);
+    textArr.push(`<span style="font-weight:500;">User Input</span> <ul style="font-style: italic; font-size: 0.9rem;">`);
     for(let i = 0; i < arr1.length; i++){
         let line = `<li>${arr1[i]}: <span style="color: blue;">${arr2[i]}</span>`
         textArr.push(line);
@@ -464,10 +464,6 @@ for(let i = 0; i< antList.length; i++){
     antList[i].ruleOut();
     antList[i].ruleCheck();
 }
-
-//document.getElementById('ruleIn-el').innerHTML = joinText(antList[0].inResult,"<br>");
-//document.getElementById('ruleOut-el').innerHTML = joinText(antList[0].outResult,"<br>");
-//document.getElementById('ruleCheck-el').innerHTML = joinText(antList[0].checkResult,"<br>");
 
 
 if(document.getElementById('ruleIn-el')&&!document.getElementById('ruleOut-el')&&!document.getElementById('ruleCheck-el')){
