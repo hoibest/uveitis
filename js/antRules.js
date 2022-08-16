@@ -239,6 +239,7 @@ const cmvau = {
     inResult : [],
     outResult : [],
     checkResult : [],
+    link: "../anterior_uveitis/cmvau.html",
     ruleIn : function() {
         ruleIn(this.disList,this,this.inResult);
     },
@@ -259,6 +260,7 @@ const hsau = {
     inResult : [],
     outResult : [],
     checkResult : [],
+    link: "../anterior_uveitis/hsau.html",
     ruleIn : function() {
         ruleIn(this.disList,this,this.inResult);
     },
@@ -279,6 +281,7 @@ const vzvau = {
     inResult : [],
     outResult : [],
     checkResult : [],
+    link: "../anterior_uveitis/vzvau.html",
     ruleIn : function() {
         ruleIn(this.disList,this,this.inResult);
     },
@@ -299,6 +302,7 @@ const fus = {
     inResult : [],
     outResult : [],
     checkResult : [],
+    link: "../anterior_uveitis/fus.html",
     ruleIn : function() {
         ruleIn(this.disList,this,this.inResult);
     },
@@ -319,6 +323,7 @@ const jiacau = {
     inResult : [],
     outResult : [],
     checkResult : [],
+    link: "../anterior_uveitis/jiacau.html",
     ruleIn : function() {
         ruleIn(this.disList,this,this.inResult);
     },
@@ -339,6 +344,7 @@ const sau = {
     inResult : [],
     outResult : [],
     checkResult : [],
+    link: "../anterior_uveitis/sau.html",
     ruleIn : function() {
         ruleIn(this.disList,this,this.inResult);
     },
@@ -359,6 +365,7 @@ const tinu = {
     inResult : [],
     outResult : [],
     checkResult : [],
+    link: "../anterior_uveitis/tinu.html",
     ruleIn : function() {
         ruleIn(this.disList,this,this.inResult);
     },
@@ -470,6 +477,7 @@ if(document.getElementById('ruleIn-el')&&!document.getElementById('ruleOut-el')&
             document.getElementById('diagnosis-el').innerHTML = antList[i].dxName;
             document.getElementById('ruleIn-el').innerHTML = joinText(antList[i].inResult,"<br>");
             document.getElementById('exclusion-el').innerHTML = antList[i].ex;
+            document.getElementById('see-full-classification-btn').setAttribute('href',antList[i].link);
         }
     }
 }
@@ -480,6 +488,7 @@ if(document.getElementById('ruleOut-el')&&!document.getElementById('ruleIn-el')&
         if(antList[i].dxName==d){
             document.getElementById('diagnosis-el').innerHTML = antList[i].dxName;
             document.getElementById('ruleOut-el').innerHTML = joinText(antList[i].outResult,"<br>");
+            document.getElementById('see-full-classification-btn').setAttribute('href',antList[i].link);
         }
     }
 }
@@ -497,9 +506,11 @@ if(document.getElementById('ruleCheck-el')&&document.getElementById('ruleIn-el')
             }
             if(antList[i].checkResult.length!=0){
                 document.getElementById('ruleCheck-el').innerHTML = joinText(antList[i].checkResult,"<br>");
-            }    
+            }  
+            document.getElementById('see-full-classification-btn').setAttribute('href',antList[i].link);  
         }
     }
+    
 }
 
 function passDiseaseName(v){
