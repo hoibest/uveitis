@@ -59,14 +59,13 @@ ul { margin: 0; padding-left: 0rem; color: rgb(49, 45, 45);}
     text-align: center;
     padding: 1rem;
     background-color: rgba(237, 63, 29, 0.63);
-    border: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .go-back{
     text-align: center;
     padding: 1rem;
     background-color: rgba(237, 63, 29, 0.63);
-    border: 1px solid black;
     margin-top: 0.5px;
 }
 

@@ -41,7 +41,7 @@
                         <select id="vitCells-el" onchange="keepData(this)">
                             <option value=''>Select</option>
                             <option value=0>0</option>
-                            <option value=1/2>½+</option>
+                            <option value=0.5>½+</option>
                             <option value=1>1+</option>
                             <option value=2>2+</option>
                             <option value=3>3+</option>
@@ -144,6 +144,7 @@
             loadData(idList);
             design(3);
             navTextContent('Examination (2)',3,5);
+            sessionStorage.setItem('disease',"");
         </script>
     </body>
 </html>

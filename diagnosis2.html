@@ -58,7 +58,7 @@
                         <select id="antChamberCells-el" onchange="keepData(this)">
                             <option value="">Select</option>
                             <option value=0>0</option>
-                            <option value=1/2>½+</option>
+                            <option value=0.5>½+</option>
                             <option value=1>1+</option>
                             <option value=2>2+</option>
                             <option value=3>3+</option>
@@ -143,7 +143,7 @@
                 <!----------------------------------------------------->
                 <!----------------------------------------------------->
                 <div class="row2-content">
-                    <div class="symptom"><div>Keratitis</div></div>
+                    <div class="symptom"><div>Herpes Simplex Keratitis</div></div>
                     <div class="input">
                         <select id="keratitis-el" onchange="keepData(this)"> 
                             <option value="">Select</option>                   
@@ -203,6 +203,7 @@
             loadData(idList);
             design(2);
             navTextContent('Examination (1)',2,5);
+            sessionStorage.setItem('disease',"");
         </script>
     </body>
 </html>

@@ -1,14 +1,14 @@
 .second-container{
-    padding-top: 3.25rem;
+    padding-top: 2rem;
     min-height: 600px;
     display: flex;
+    flex-direction: column;
 }
 
 
 .info-container{
     background-color: #FADCD6;
     width: 100%;
-    border-radius: 20px 20px 0px 0px;
     display: flex;
     flex-direction: column;
     padding-top: 2.5rem;
@@ -24,7 +24,14 @@
     text-align: center;
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
+}
+
+.info-exp{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    color:rgb(84, 84, 208);
 }
 
 
@@ -32,7 +39,7 @@
     text-align: start;
     
     line-height: 2rem;
-    margin-bottom: 3rem; /*야매*/
+    margin-bottom: 1rem; /*야매*/
 }
 
 ul { margin: 0; padding: 0; }
@@ -70,4 +77,46 @@ ul { margin: 0; padding: 0; }
 .anterior-uveitis-info:hover{
     text-decoration: underline;
     color: rgb(84, 84, 208);
+}
+
+.row3{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #e2e2e2;
+}
+
+.backNext {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.75rem 0;
+}
+
+
+.backButton {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    color: #e64626;
+    padding: 0.5rem 0.5rem;
+}
+
+.backButton:hover{
+    color: #FADCD6;
+}
+
+.nextButton {
+    background-color: #59A77D;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+    padding: 0.5rem 1.25rem;
+}
+
+.nextButton:hover{
+    background-color: #7ea892;
 }

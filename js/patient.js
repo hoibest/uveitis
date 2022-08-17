@@ -120,6 +120,6 @@ function grade(val){
         return DK;
     }
     else {
-        return parseInt(val);
+        return Number(val);
     }
 }

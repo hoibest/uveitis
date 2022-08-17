@@ -29,6 +29,9 @@
                 <div class="info-title">
                     Possible Anterior Uveitides
                 </div>
+                <div class="info-exp">
+                    Click each uveitis and see full classification criteria
+                </div>
                 <div class="info-content">
                     <ul>
                         <li> <a href="anterior_uveitis/cmvau.html" class="anterior-uveitis-info">Cytomegalovirus Anterior Uveitis</a></li>
@@ -44,18 +47,15 @@
                     
                     
                 </div>
-                <div>
-                   <a class="pathClassification" href="diagnosis1.html">
-                        <div class="classificationButton">
-                            Start Classification
-                        </div>
-                    </a>
-
-                    <a class="pathClassification" href="index.html">
-                        <div class="classificationButton">
-                            Home
-                        </div>
-                    </a>
+            </div>
+            <div class="row3">
+                <div class="backNext">
+                    <div>
+                        <a href="index.html"><button class="backButton">Home</button></a>
+                    </div>
+                    <div class="nextDiv">
+                        <a href="diagnosis1.html"><button class="nextButton">Classification</button></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,6 +67,7 @@
         <script src="./js/loading.js"></script>
         <script>
             design(0);
+            sessionStorage.setItem('disease',"");
         </script>
     </body>
 </html>
