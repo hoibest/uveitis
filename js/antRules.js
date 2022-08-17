@@ -61,7 +61,7 @@ const hsauRule_2 = {
     ruleName : "hsau #2",
     rule : hsauRule_2_html,
     variableNames: ['Laterality','PCR HSV(+)'],
-    variableValues: [LATERALITY,POS_PCR_CMV],
+    variableValues: [LATERALITY,POS_PCR_HSV],
     href: [html_1,html_5],
     userInput : function() {
         return inputText(this.variableNames,this.variableValues,this.href)
