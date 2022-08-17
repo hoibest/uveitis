@@ -57,8 +57,8 @@ header{
 .nav-greenbar{
     background-color: #59A77D;
     height: 100%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     width: 0%;
 }
 

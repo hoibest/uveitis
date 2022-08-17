@@ -34,7 +34,7 @@ function design(num){
     const tot = 5;
     document.getElementById('nav-greenbar').style.width = num*20 + "%"; 
     if(num==tot){
-        document.getElementById('nav-greenbar').style.borderRadius = 10+'px';
+        document.getElementById('nav-greenbar').style.borderRadius = 5+'px';
     }
 }
 
