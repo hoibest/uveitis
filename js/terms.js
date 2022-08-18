@@ -697,7 +697,7 @@ function tinuRuleTwo(){
             b = IDK;
         }
     }
-    else if(p.EL_URINE_BM==dk){
+    else if(EL_URINE_BM==dk){
         b = IDK;
     }
     else{
