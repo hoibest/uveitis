@@ -113,7 +113,7 @@
             <div class="row3">
                 <div class="backNext">
                     <div>
-                        <a href="anteriorUveitides.html"><button onclick="warning()" class="backButton">Back</button></a>
+                        <a id="diagnosis1"><button onclick="warning()" class="backButton">Back</button></a>
                     </div>
                     <div class="nextDiv">
                         <a href="diagnosis2.html"><button class="nextButton">Next</button></a>
@@ -134,7 +134,13 @@
             navTextContent(`History`,1,5);
             sessionStorage.setItem('disease',"");
             function warning(){
-                alert("I am an alert box!");
+                let text = "You are about to leave this page and clear all input";
+                if (confirm(text) == true) {
+                    sessionStorage.clear();
+                    document.getElementById("diagnosis1").setAttribute("href","anteriorUveitides.html");
+                } else {
+                    
+                }
             }
         </script>
     </body>
