@@ -113,7 +113,7 @@
             <div class="row3">
                 <div class="backNext">
                     <div>
-                        <a id="diagnosis1"><button onclick="warning()" class="backButton">Back</button></a>
+                        <a id="diagnosis1"><button onclick="warning()" class="backButton" id="backButton">Back</button></a>
                     </div>
                     <div class="nextDiv">
                         <a href="diagnosis2.html"><button class="nextButton">Next</button></a>
@@ -139,7 +139,7 @@
                     sessionStorage.clear();
                     document.getElementById("diagnosis1").setAttribute("href","anteriorUveitides.html");
                 } else {
-                    
+                    document.getElementById("diagnosis1").setAttribute("href","");
                 }
             }
         </script>
