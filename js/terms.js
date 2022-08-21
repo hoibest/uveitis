@@ -311,7 +311,15 @@ function vzvauRuleThree(){
         }
     }
     else if(IRIS_ATROPHY==dk){
-        b = IDK;
+        if(AGE=='≥60'){
+            b = IDK;
+        }
+        else if(AGE==dk){
+            b = IDK;
+        }
+        else{
+            b = FALSE;
+        }
     }
     else{
         b = FALSE;
