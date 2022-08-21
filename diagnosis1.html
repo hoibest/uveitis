@@ -134,7 +134,11 @@
             navTextContent(`History`,1,5);
             sessionStorage.setItem('disease',"");
             function warning(){
-                let text = "You are about to leave this page and clear all input";
+                let text = 
+                `
+                Leave page?
+                Changes that you made will not be saved
+                `;
                 if (confirm(text) == true) {
                     sessionStorage.clear();
                     document.getElementById("diagnosis1").setAttribute("href","anteriorUveitides.html");
